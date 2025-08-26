@@ -10,6 +10,7 @@ def swap_without_temp(a, b):
 
 result = swap_without_temp(5, 10)
 print(f"After swapping: a = {result[1]}, b = {result[0]}")              #TODO: a = 5, b = 10
+
 #3 Convert RGB to HEX
 def rgb_to_hex(r, g, b):
     return f"#{((r<<16) + (g<<8) + b):06X}"
@@ -28,7 +29,6 @@ matrix = [
 print("\n".join(",".join(map(str, row)) for row in transpose_matrix(matrix)))       #TODO: 1,4,7
                                                                                         #  2,5,8
                                                                                         #  3,6,9
-
 #5 Chack if date is valid
 from datetime import datetime
 def is_date_valid(val):
@@ -149,7 +149,6 @@ def get_length(string):
 print(get_length("Hello, World!"))
 
 #23 Calculate the area of a circle
-
 import math
 def calculate_circle_area(radius):
     return math.pi * radius ** 2
@@ -160,7 +159,7 @@ def cap_to_front(s):
     return ''.join(filter(str.isupper, s)) + ''.join(filter(str.islower, s))
 print(cap_to_front("MoveCapitalLettersToFront"))
 
-#25 Chack if an array is special
+#25 Check if an array is special
 def is_special_array(arr):
     return all(arr[i] % 2 == i % 2 for i in range(len(arr)))
 arr = [2, 3, 5, 8, 9]
@@ -377,7 +376,7 @@ startDate = datetime(2023, 8, 1)
 endDate = datetime(2023, 8, 10)
 print(DateDifferenceInDays(startDate, endDate))
 
-#61 Chank if a string is a valid email address
+#61 Check if a string is a valid email address
 import re
 def isValiidEmail(email):
     return bool(re.match(r'^[^\5@] + @[^\5@] + \.[^\s@] + $', email))
@@ -492,4 +491,5 @@ print(",".join(map(str, result)))
 import math
 def DegToRad(degrees):
     return degrees * (math.pi / 180)
+
 print(DegToRad(90))
