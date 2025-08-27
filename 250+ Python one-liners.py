@@ -493,3 +493,64 @@ def DegToRad(degrees):
     return degrees * (math.pi / 180)
 
 print(DegToRad(90))
+
+#80 Bianry letter conberter
+def ConvertBinary(s):
+    return ''.join(['0' if 'a' <= c <= 'm' else '1' for c in s.lower()])
+print(ConvertBinary("Hello"))
+
+#81 Find the intersection of two arrays
+def FindIntersection(arr1, arr2):
+    return list(set(arr1) & set(arr2))
+arr1 = [1, 2, 3, 4, 5]
+arr2 = [4, 5, 6, 7, 8]
+print(FindIntersection(arr1, arr2))
+
+#82 Convert days to years, month, and days
+def DaysToYearsMonthsDays(days):
+    years = days // 365
+    months = (days % 365) // 30
+    days = (days % 365) % 30
+    return years, months, days
+print(DaysToYearsMonthsDays(400))
+
+#83 Check if an object is empty
+def IsEmptyObject(obj):
+    return len(obj) == 0
+print(IsEmptyObject({}))
+print(IsEmptyObject({"name": "John", "age": 30}))
+
+#84 Count decimal places
+def GetDecimalPlaces(num):
+    if "." in num:
+        return len(num.split(".")[1])
+    else:
+        return 0
+print(GetDecimalPlaces("3.14159"))
+print(GetDecimalPlaces("100"))
+
+#85 Remove whitespace from a string
+def RemoveWhitespace(str):
+    return "".join(str.split())
+print(RemoveWhitespace("  Hello   World  "))
+
+#86 Find the difference between two arrays
+def ArrayDifference(arr1, arr2):
+    return list(set(arr1) - set(arr2))
+arr1 = [1, 2, 3, 4, 5]
+arr2 = [4, 5, 6, 7, 8]
+print(ArrayDifference(arr1, arr2))
+difference = ArrayDifference(arr1, arr2)
+print(",".join(map(str, difference)))
+
+#87 Check if a number is a fibonacci number
+def IsFibonacci(num):
+    return IsPerfectSquare(5 * num * num + 4) or IsPerfectSquare(5 * num * num - 4)
+
+def IsPerfectSquare(num):
+    sqrt = int(num ** 0.5)
+    return sqrt * sqrt == num
+ 
+print(IsFibonacci(21))
+print(IsFibonacci(6))
+print(IsFibonacci(5))
