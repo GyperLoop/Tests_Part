@@ -554,3 +554,45 @@ def IsPerfectSquare(num):
 print(IsFibonacci(21))
 print(IsFibonacci(6))
 print(IsFibonacci(5))
+
+#88 Convert hours to minutes
+def HoursToMinutes(hours):
+    return hours * 60
+print(HoursToMinutes(2))
+
+#89 Get the first n elements of an array
+def FirstNElements(arr, n):
+    return arr[:n]  
+array = [1,2,3,4,5]
+print(",".join(map(str, FirstNElements(array, 3))))
+
+#90 Check if a number is odd
+def is_odd(num):
+    return num % 2 != 0 
+print(is_odd(3))
+print(is_odd(4))
+
+#91 Calculate the standard deviation of an array of numbers
+import math
+def standard_deviation(arr):
+    mean = sum(arr) / len(arr)
+    sum_of_squared_differences = sum((x - mean) ** 2 for x in arr)
+    return math.sqrt(sum_of_squared_differences / len(arr))
+print(standard_deviation([10, 12, 23, 23, 16, 23, 21, 16]))
+
+#92 Check if a string ends with a specific substring
+def ends_with_substring(s, substring):
+    return s.endswith(substring)
+print(ends_with_substring("Hello, World!", "World!"))
+print(ends_with_substring("Hello, World!", "Hello!"))
+
+#93 Calculate the sum of squares of an array
+def sum_of_squares(arr):
+    return sum(x ** 2 for x in arr)
+print(sum_of_squares([1, 2, 3, 4, 5]))
+
+#94 Calculate pi to n decimal places
+import math
+def my_pi(n):
+    return round(math.pi, n)
+print(my_pi(5))
