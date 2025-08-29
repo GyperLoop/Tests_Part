@@ -603,3 +603,9 @@ def generate_array(length):
 print(generate_array(5))
 
 print(my_pi(5))
+
+#96 join path portions
+def join_path(portion1, portion2):
+    return f"{portion1.rstrip('/')}/{portion2.lstrip('/')}"
+print(join_path("/home/user", "documents/file.txt"))
+
