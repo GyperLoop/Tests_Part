@@ -595,4 +595,11 @@ print(sum_of_squares([1, 2, 3, 4, 5]))
 import math
 def my_pi(n):
     return round(math.pi, n)
+
+#95 Generate an array of random numbers
+import random
+def generate_array(length):
+    return [random.randint(1, 100) for _ in range(length)]
+print(generate_array(5))
+
 print(my_pi(5))
