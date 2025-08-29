@@ -609,3 +609,38 @@ def join_path(portion1, portion2):
     return f"{portion1.rstrip('/')}/{portion2.lstrip('/')}"
 print(join_path("/home/user", "documents/file.txt"))
 
+#97 Convert seconds to hours, minutes, and seconds
+def seconds_to_hours_mins_secs(seconds):
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    seconds = (seconds % 3600) % 60
+    return f"{hours} hours, {minutes} minutes, and {seconds} seconds"
+print(seconds_to_hours_mins_secs(3661))
+print(seconds_to_hours_mins_secs(67))
+
+#98 Simple calculator
+def calculator(num1, op, num2):
+    return {
+        '+': num1 + num2,
+        '-': num1 - num2,
+        '*': num1 * num2,
+        '/': num1 / num2 if num2 != 0 else 'Division by zero error'
+    }.get(op, 'Invalid operator')
+print(calculator(10, '+', 5))
+print(calculator(10, '/', 0))
+print(calculator(10, '*', 5))
+print(calculator(10, '-', 5))
+
+#99 Find nemo
+def find_nemo(sentence):
+    words = sentence.split()
+    index = words.index("Nemo") +1 if "Nemo" in words else -1
+    return f"I found Nemo at {index}!" if index != -1 else "I can't find Nemo :("
+print(find_nemo("I am finding Nemo !"))
+
+#100 Count the occurrences of a character in a string
+def count_occurrences(string, char):
+    return string.lower().count(char.lower())
+print(count_occurrences("Hello, World!", "o"))
+
+
