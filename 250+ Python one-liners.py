@@ -643,4 +643,37 @@ def count_occurrences(string, char):
     return string.lower().count(char.lower())
 print(count_occurrences("Hello, World!", "o"))
 
+#101 Convert video length to seconds
+def minutes_to_seconds(time):
+    minutes, seconds = map(int, time.split(':'))
+    return minutes * 60 + seconds if 0 <= seconds < 60 else 0
+print(minutes_to_seconds("02:30"))
 
+#102 Remove duplicates from a string
+def remove_duplicates_from_string(string):
+    return ''.join(sorted(set(string), key=string.index))
+print(remove_duplicates_from_string("hello world"))
+
+#103 Find the mode of an array of numbers
+def mode(arr):
+    occurrences = {}
+    for num in arr:
+        if num in occurrences:
+            occurrences[num] += 1
+        else:
+            occurrences[num] = 1
+            max_occurrences = max(occurrences.values())
+    return [num for num, count in occurrences.items() if count == max_occurrences]
+numbers = [1, 2, 2, 3, 3, 3, 4]
+print(f"Mode: {mode(numbers)}")
+
+#104 Check for repdigit
+def is_repdigit(num):
+    return len(set(str(num))) == 1
+print(is_repdigit(1111))
+print(is_repdigit(1234))
+
+#105 Convert binary number to decimal
+def binary_to_decimal(binary):
+    return sum(int(bit) * 2 ** index for index, bit in enumerate(reversed(binary)))
+print(binary_to_decimal("1101"))
