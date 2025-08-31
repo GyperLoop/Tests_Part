@@ -677,3 +677,66 @@ print(is_repdigit(1234))
 def binary_to_decimal(binary):
     return sum(int(bit) * 2 ** index for index, bit in enumerate(reversed(binary)))
 print(binary_to_decimal("1101"))
+
+#106 Check if an array is sorted in descending order
+def sorted_descending(arr):
+    return all(arr[i] >= arr[i + 1] for i in range(len(arr) - 1))
+print(sorted_descending([5, 4, 3, 2, 1]))
+print(sorted_descending([5, 4, 3, 2, 2, 1]))
+print(sorted_descending([1, 2, 3, 4, 5]))
+
+#107 Find the average of even number in an array
+def average_of_even_numbers(arr):
+    even_numbers = [num for num in arr if num % 2 == 0]
+    return sum(even_numbers) / len(even_numbers) if even_numbers else 0
+print(average_of_even_numbers([1, 2, 3, 4, 5]))
+print(average_of_even_numbers([1, 3, 5]))
+
+#108 Capitalize the first letter of each word in a string
+def capitalize_words(string):
+    return ' '.join(word.capitalize() for word in string.split())
+print(capitalize_words("hello world! this is python."))
+print(capitalize_words("python is awesome."))
+
+#109 Check if an array is a subset of another array
+def is_subset(arr1, arr2):
+    return all(item in arr2 for item in arr1)
+print(is_subset([1, 2], [1, 2, 3, 4, 5]))
+print(is_subset([1, 6], [1, 2, 3, 4, 5]))
+
+#110 Find the minimum and maximum elements in an array
+def min_max(arr):
+    return min(arr), max(arr) if arr else (None, None)
+result = min_max([1, 2, 3, 4, 5])
+print(f'{{min: {result[0]}, max: {result[1]}}}')
+print(min_max([1, 2, 3, 4, 5]))
+print(min_max([43, 34, 54, 6, 23]))
+
+#111 Validate zip code
+import re
+def is_valid(zip_code):
+    return bool(re.match(r'^\d{5}(-\d{4})?$', zip_code))
+print(is_valid("12345"))
+print(is_valid("12345-6789"))
+print(is_valid("1234"))
+
+#112 Validate email address                                                                                      #ToDo: Find email
+def is_valid_email(email):
+    return bool(re.match(r'^[\w\.-]+@[\w\.-]+\.\w+$', email))
+print(is_valid_email("garfieldfinucky@gmail.com"))
+print(is_valid_email("invalid-email"))
+
+#113 Remove null values from a list
+def remove_null(arr):
+    return [item for item in arr if item is not None]
+array = [1, 2, None, 4, None, 5]
+print(f"Array without nulls: {remove_null(array)}")
+
+#114 Maurice`s racing snails
+def maurice_wins(m_snails, s_snails):
+    wins = sum(m > s for m, s in zip(m_snails, s_snails))
+    return wins >= 2
+print(maurice_wins([1, 2, 3], [2, 3, 4]))
+
+###114
+
