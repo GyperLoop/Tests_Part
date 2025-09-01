@@ -738,5 +738,53 @@ def maurice_wins(m_snails, s_snails):
     return wins >= 2
 print(maurice_wins([1, 2, 3], [2, 3, 4]))
 
-###114
+#115 Calculate the sum of cubes of an array
+def sum_of_cubes(arr):
+    return sum(x ** 3 for x in arr)
+arr = [1, 2, 3, 4, 5]
+print(f"Sum of cubes: {sum_of_cubes(arr)}")
+
+#116 Shuffle the characters of a string
+import random
+def shuffle_string(s):
+    shuffle_chars = list(s)
+    random.shuffle(shuffle_chars)
+    return ''.join(shuffle_chars)
+s = 'Hello'
+shuffled_string = shuffle_string(s)
+print(f"Shuffled string: {shuffled_string}")
+
+#117 Find the nth fibonacci number
+def fibonacci(n):
+    if n <= 1:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+n = 7
+result = fibonacci(n)
+print(f"Fibonacci({n}): {result}")
+
+#118 Symmetry checker
+def is_symmetrical(num):
+    return str(num) == str(num)[::-1]
+num = 12321
+print(is_symmetrical(num))
+
+#119 Maximum triangle edge calculator
+def next_edge(side1, side2):
+    return (side1 + side2) - 1
+side1 = 5
+side2 = 7
+print(f"Next edge length: {next_edge(side1, side2)}")
+
+#120 Calculate the perimeter of a rectangle
+def rectangle_perimeter(width, height):
+    return 2 * (width + height)
+print(rectangle_perimeter(5, 10))
+
+#121 Find the longest common prefix in an array of string
+def longest_common_prefix(strs):
+    return "" if not strs else "".join(c for i, c in enumerate(strs[0]) if all(s[i] == c for s in strs))
+strs = ["apple", "apricot", "banana"]
+print(longest_common_prefix(strs))
+
+
 
