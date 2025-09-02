@@ -737,4 +737,80 @@ def maurice_wins(m_snails, s_snails):
     return wins >= 2
 print(maurice_wins([1, 2, 3], [2, 3, 4]))
 
-###114
+#115 Calculate the sum of cubes of an array
+def sum_of_cubes(arr):
+    return sum(x ** 3 for x in arr)
+arr = [1, 2, 3, 4, 5]
+print(f"Sum of cubes: {sum_of_cubes(arr)}")
+
+#116 Shuffle the characters of a string
+import random
+def shuffle_string(s):
+    shuffle_chars = list(s)
+    random.shuffle(shuffle_chars)
+    return ''.join(shuffle_chars)
+s = 'Hello'
+shuffled_string = shuffle_string(s)
+print(f"Shuffled string: {shuffled_string}")
+
+#117 Find the nth fibonacci number
+def fibonacci(n):
+    if n <= 1:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+n = 7
+result = fibonacci(n)
+print(f"Fibonacci({n}): {result}")
+
+#118 Symmetry checker
+def is_symmetrical(num):
+    return str(num) == str(num)[::-1]
+num = 12321
+print(is_symmetrical(num))
+
+#119 Maximum triangle edge calculator
+def next_edge(side1, side2):
+    return (side1 + side2) - 1
+side1 = 5
+side2 = 7
+print(f"Next edge length: {next_edge(side1, side2)}")
+
+#120 Calculate the perimeter of a rectangle
+def rectangle_perimeter(width, height):
+    return 2 * (width + height)
+print(rectangle_perimeter(5, 10))
+
+#121 Find the longest common prefix in an array of string
+def longest_common_prefix(strs):
+    return "" if not strs else "".join(c for i, c in enumerate(strs[0]) if all(s[i] == c for s in strs))
+strs = ["apple", "apricot", "banana"]
+print(longest_common_prefix(strs))
+
+#122 Greeting function with conditional message
+def say_hello_bye(name, num): 
+    return f"Hello {name.capitalize()}" if num == 1 else f"Bye {name.capitalize()}"
+name = "Alice"
+num = 2
+print(say_hello_bye(name, num))
+
+#123 Find the first non-repeating character in a string
+def first_non_repeating_char(s):
+    return next((c for c in s if s.count(c) == 1), None)
+s = "abacasbad"
+print(first_non_repeating_char(s))
+
+#124 One-liner bitwise operations in python
+def bitwise_operations(a, b):
+    return {
+        'AND': a & b,
+        'OR': a | b,
+        'XOR': a ^ b,
+        'NOT a': ~a,
+        'NOT b': ~b
+    }
+print(bitwise_operations(5, 3))
+
+#125 Calculate the exponential of a number
+def exponential(base, exponent):
+    return base ** exponent
+result = exponential(2, 3)
+print(f"Exponential result: {result}")
