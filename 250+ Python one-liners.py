@@ -786,5 +786,35 @@ def longest_common_prefix(strs):
 strs = ["apple", "apricot", "banana"]
 print(longest_common_prefix(strs))
 
+#122 Greeting function with conditional message
+def say_hello_bye(name, num): 
+    return f"Hello {name.capitalize()}" if num == 1 else f"Bye {name.capitalize()}"
+name = "Alice"
+num = 2
+print(say_hello_bye(name, num))
+
+#123 Find the first non-repeating character in a string
+def first_non_repeating_char(s):
+    return next((c for c in s if s.count(c) == 1), None)
+s = "abacasbad"
+print(first_non_repeating_char(s))
+
+#124 One-liner bitwise operations in python
+def bitwise_operations(a, b):
+    return {
+        'AND': a & b,
+        'OR': a | b,
+        'XOR': a ^ b,
+        'NOT a': ~a,
+        'NOT b': ~b
+    }
+print(bitwise_operations(5, 3))
+
+#125 Calculate the exponential of a number
+def exponential(base, exponent):
+    return base ** exponent
+result = exponential(2, 3)
+print(f"Exponential result: {result}")
+
 
 
