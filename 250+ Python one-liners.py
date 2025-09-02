@@ -814,3 +814,26 @@ def exponential(base, exponent):
     return base ** exponent
 result = exponential(2, 3)
 print(f"Exponential result: {result}")
+
+#123 Find the first non-repeating character in a string
+def first_non_repeating_char(s):
+    return next((c for c in s if s.count(c) == 1), None)
+s = "abacasbad"
+print(first_non_repeating_char(s))
+
+#124 One-liner bitwise operations in python
+def bitwise_operations(a, b):
+    return {
+        'AND': a & b,
+        'OR': a | b,
+        'XOR': a ^ b,
+        'NOT a': ~a,
+        'NOT b': ~b
+    }
+print(bitwise_operations(5, 3))
+
+#125 Calculate the exponential of a number
+def exponential(base, exponent):
+    return base ** exponent
+result = exponential(2, 3)
+print(f"Exponential result: {result}")
