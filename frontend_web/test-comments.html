@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Comment Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .comments-comments-list { border: 1px solid #ccc; padding: 15px; max-width: 600px; }
+    article { border-bottom: 1px solid #eee; padding: 10px; }
+    .hoverable-link-text { font-weight: bold; color: #333; }
+    .comments-comments-list__show-previous-container { text-align: center; margin: 10px 0; }
+    .comments-comments-list__show-previous-container button {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Comment Section</h2>
+  <div class="comments-comments-list">
+
+    <article>
+      <span class="hoverable-link-text">Alice Johnson</span>
+      <p>Great project! Contact me at <a href="mailto:alice@example.com">alice@example.com</a></p>
+    </article>
+
+    <article>
+      <span class="hoverable-link-text">Bob Smith</span>
+      <p>Here’s my email: <a href="mailto:bob.smith@example.org">bob.smith@example.org</a></p>
+    </article>
+
+    <article>
+      <span class="hoverable-link-text">Charlie Brown</span>
+      <p>Ping me: <a href="mailto:charlie123@testmail.com">charlie123@testmail.com</a></p>
+    </article>
+
+    <div class="comments-comments-list__show-previous-container">
+      <button onclick="loadMore()">Load more comments</button>
+    </div>
+
+  </div>
+
+  <script>
+    function loadMore() {
+      const container = document.querySelector('.comments-comments-list');
+      const newComment = document.createElement('article');
+      newComment.innerHTML = `
+        <span class="hoverable-link-text">Diana Prince</span>
+        <p>Email me at <a href="mailto:diana@wonder.com">diana@wonder.com</a></p>
+      `;
+      container.insertBefore(newComment, container.querySelector('.comments-comments-list__show-previous-container'));
+    }
+  </script>
+</body>
+</html>
