@@ -837,3 +837,25 @@ def exponential(base, exponent):
     return base ** exponent
 result = exponential(2, 3)
 print(f"Exponential result: {result}")
+
+#126 Check if a string is an anagram of another string
+def is_anagram(str1, str2):
+    return sorted(str1) == sorted(str2)
+print(is_anagram("listen", "silent"))
+print(is_anagram("hello", "world"))
+
+#127 Compact phone number formatter
+def format_phone_number(numbers):
+    return "(+{}{}{}) {}{}{}-{}{}{}{}".format(*numbers)
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+print(format_phone_number(numbers))
+
+#128 Check if a number is a neon number
+def is_neon_number(num):
+    sum_of_digits = 0
+    square = num * num
+    while square:
+        sum_of_digits += square % 10
+        square //= 10
+    return sum_of_digits == num
+print(is_neon_number(9))
