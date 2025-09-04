@@ -859,3 +859,37 @@ def is_neon_number(num):
         square //= 10
     return sum_of_digits == num
 print(is_neon_number(9))
+
+#129 Recursive right shift mimicker
+def shift_to_right(x, y):
+    return x if y < 1 else shift_to_right(x // 2, y - 1)
+x = 16
+y = 2
+print(shift_to_right(x, y))
+
+#130 Check if a number is a disarium number
+def is_disarium_number(num):
+    num_str = str(num)
+    disarium_sum = sum(int(digit) ** (index + 1) for index, digit in enumerate(num_str))
+    return disarium_sum == num
+print(is_disarium_number(135))
+print(is_disarium_number(123))
+
+#131 Remove vowels from a string
+import re
+def remove_vowels(s):
+    return re.sub(r'[aeiouAEIOU]', '', s)
+print(remove_vowels("Hello, World!"))
+
+#132 Generate an array of consecutive numbers
+def consecutive_numbers(start, end):
+    return list(range(start, end + 1))
+result = consecutive_numbers(5, 10)
+print(",".join(map(str, result)))
+
+#133 Check if a number is a pronic number
+def is_pronic_number(num):
+    n = int(num ** 0.5)
+    return n * (n + 1) == num
+print(is_pronic_number(6))
+print(is_pronic_number(10))
