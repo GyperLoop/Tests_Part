@@ -893,3 +893,23 @@ def is_pronic_number(num):
     return n * (n + 1) == num
 print(is_pronic_number(6))
 print(is_pronic_number(10))
+
+#134 Check if a string is a pangram
+def is_pangram(s):
+    letters = set(c.lower() for c in s if c.isalpha())
+    return len(letters) == 26
+print(is_pangram("The quick brown fox jumps over the lazy dog"))
+print(is_pangram("Hello, World!"))
+
+#135 Reverse the order of words in a sentence
+def reverse_sentence(sentence):
+    words = sentence.split()
+    reversed_sentence = ' '.join(reversed(words))
+    return reversed_sentence
+print(reverse_sentence("Hello, how are you doing?"))
+
+#136 Calculate the hypotenuse of a right-angled triangle
+import math
+def calculate_hypotenuse(a, b):
+    return math.sqrt(a ** 2 + b ** 2)
+print(calculate_hypotenuse(3, 4))
