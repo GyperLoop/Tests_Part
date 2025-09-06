@@ -913,3 +913,49 @@ import math
 def calculate_hypotenuse(a, b):
     return math.sqrt(a ** 2 + b ** 2)
 print(calculate_hypotenuse(3, 4))
+
+#137 Find the aberage of odd numbers in an array
+def aberage_of_odd_numbers(arr):
+    odd_numbers = [num for num in arr if num % 2 != 0]
+    return sum(odd_numbers) / len(odd_numbers) if odd_numbers else 0
+numbers = [1, 2, 3, 4, 5]
+print(aberage_of_odd_numbers(numbers))
+
+#138 Count the letters in a string
+def count_letters(s):
+    return {char: s.lower().count(char) for char in s.lower() if char.isalpha()}
+input_string = "Hello, World!"
+result = count_letters(input_string)
+for char, count in result.items():
+    print(f"{char} => {count}")
+
+#139 Convert seconds to days, hours, minutes, and seconds
+def secs_to_days_hours_mins_secs(seconds):
+    days = seconds // 86400
+    hours = (seconds % 86400) // 3600
+    minutes = (seconds % 3600) // 60
+    seconds = seconds % 60
+    return f"{days} days, {hours} hours, {minutes} minutes, and {seconds} seconds"
+print(secs_to_days_hours_mins_secs(100000))
+
+#140 Check if a number is a prime factor of another number
+def is_prime_factor(num, factor):
+    return num % factor == 0 and all(factor % i != 0 for i in range(2, int(factor ** 0.5) + 1)) and factor > 1
+num = 28
+factor = 7
+print(is_prime_factor(num, factor))
+
+#141 Find the second largest prime factor of a number
+def largest_prime_factor(num):
+    if num == 1:
+        return 1
+    factor = next((x for x in range(2, int(num ** 0.5) + 1) if num % x == 0 and all(x % y != 0 for y in range(2, int(x ** 0.5) + 1))), 0)
+    return num if factor == 0 else factor
+print(largest_prime_factor(13195))
+
+#142 Check if a number is a pronic square
+def is_pronic_square(num):
+    sqrt = num ** 0.5
+    return sqrt  == int(sqrt)
+print(is_pronic_square(36))
+print(is_pronic_square(20))
