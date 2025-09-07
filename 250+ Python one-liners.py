@@ -959,3 +959,26 @@ def is_pronic_square(num):
     return sqrt  == int(sqrt)
 print(is_pronic_square(36))
 print(is_pronic_square(20))
+
+#143 World landmass proportion calculator
+def area_of_country(name, area):
+    return f"{name} is {area * 100 / 148940000:.2f}% of the total world's landmass"
+country_name = "Finland"
+country_area = 338424
+print(area_of_country(country_name, country_area))
+
+#144 Loaded die detection
+def is_unloaded(frequencies):
+    return sum(f * (i + 1) ** (f - 1) for i, f in enumerate(frequencies)) > 11.0705
+frequencies = [1, 1, 1, 1, 1, 1]
+print(is_unloaded(frequencies))
+
+#145 Hand washing duration calculator
+def wash_hands(n, nm):
+    total_seconds = nm * n * 21 * 30
+    minutes = total_seconds // 60
+    seconds = total_seconds % 60    
+    return f"{minutes} minutes and {seconds} seconds"
+n = 3
+nm = 2
+print(wash_hands(n, nm))
