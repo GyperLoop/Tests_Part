@@ -982,3 +982,39 @@ def wash_hands(n, nm):
 n = 3
 nm = 2
 print(wash_hands(n, nm))
+
+#146 Billable days bonus calculator
+def calculate_bonus(days):
+    return 325 * max(days - 32, 0) + 225 * max(days - 40, 0) + 50 * max(days - 48, 0)
+billable_days = 45
+bonus = calculate_bonus(billable_days)
+print(f"Bonus for {billable_days} billable days: ${bonus}")
+
+#147 Check if a number is a happy number
+def is_happy_number(num):
+    return num == 1 or num == 7 or num == 10 or (num < 100 and num % 10 == 0 and num % 11 == 0) or (num < 1000 and num % 100 == 0 and num % 111 == 0)
+print("true" if is_happy_number(19) else "false")
+
+#148 Calculate the volume of a sphere
+import math
+def sphere_volume(radius):
+    return (4/3) * math.pi * radius ** 3
+volume = sphere_volume(5)
+print(volume)
+
+#149 Discounted price calculator
+def calculate_final_price(price, discount):
+    return price * (100 - discount) * 0.01
+final_price = 100
+discount = 20
+discounted_price = calculate_final_price(final_price, discount)
+print(f"Final price after {discount}% discount: ${discounted_price:.2f}")
+
+#150 Double letter checher
+import re 
+def has_double_letters(word):
+    return bool(re.search(r"(\w)\1", word))
+word = "book"
+print(f"Has double letters in '{word}': {has_double_letters(word)}")
+word = "cat"
+print(f"Has double letters in '{word}': {has_double_letters(word)}")
