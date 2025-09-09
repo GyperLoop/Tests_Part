@@ -1018,3 +1018,26 @@ word = "book"
 print(f"Has double letters in '{word}': {has_double_letters(word)}")
 word = "cat"
 print(f"Has double letters in '{word}': {has_double_letters(word)}")
+
+#151 Find the length of the longest word in a sentence
+def longest_word_length(sentence):
+    return max(len(word) for word in sentence.split())
+sentence = "The quick brown fox jumps over the lazy dog"
+print(longest_word_length(sentence))
+
+#152 Stolen items loss calculator
+def calculate_losses(stolen_item):
+    total_value = sum(stolen_item.values())
+    return "Lucky you!" if total_value == 0 else f"You have lost {total_value}$."
+stolen_item = {"tv": 300, "stereo": 100, "laptop": 800}
+losses = calculate_losses(stolen_item)
+print(f"Losses: {losses}")
+
+#153 Hacker speak converter
+import re
+def convert_to_hacker_speak(input_str):
+    return re.sub('[aeios]', lambda x: '4' if x.group() == 'a' else '3' if x.group() == 'e' else '1' if x.group() == 'i' else '0' if x.group() == 'o' else '5', input_str, flags=re.IGNORECASE)
+input_str = "Hello, how are you?"
+hacker_speak = convert_to_hacker_speak(input_str)
+print(f"Original: {input_str}")
+print(f"Hacker Speak: {hacker_speak}")
