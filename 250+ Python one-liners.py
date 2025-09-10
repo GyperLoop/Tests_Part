@@ -1,4 +1,9 @@
-#1 Convert Celsius to Fahrengeit
+"""
+Welcome to 250+ Python one-liners!
+Here are some handy Python one-liners for various tasks.
+Thank you for stopping by!
+"""
+#1 Convert Celsius to Fahrenheit
 def celsius_to_fahrenheit(celsius):
     return (celsius * 9 / 5) + 32
 
@@ -1041,3 +1046,25 @@ input_str = "Hello, how are you?"
 hacker_speak = convert_to_hacker_speak(input_str)
 print(f"Original: {input_str}")
 print(f"Hacker Speak: {hacker_speak}")
+
+#154 Find the area of a rectangle
+def rectangle_area(length, width):
+    return length * width
+length = 5
+width = 10
+area = rectangle_area(length, width)
+print(f"Area of rectangle: {area}")
+
+#155 Calculate the sum of even numbers in an array
+def sum_of_even_numbers(arr):
+    return sum(num for num in arr if num % 2 == 0)
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+sum = sum_of_even_numbers(arr)
+print(f"Sum of even numbers: {sum}")
+
+#156 Calculate the volume of a cylinder
+import math
+def cylinder_volume(radius, height):
+    return math.pi * radius ** 2 * height
+volume = cylinder_volume(5, 10)
+print(f"Volume of cylinder: {volume}")
