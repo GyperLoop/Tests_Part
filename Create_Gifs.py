@@ -17,7 +17,7 @@ def get_color(T: float) -> tuple:
     return tuple(colors[0][i] * (1 - T) + colors[1][i] * T for i in range(3))
 
 # Setup figure, size
-fig, ax = plt.subplots(figsize=(6,6))
+fig, ax = plt.subplots(figsize=(2, 2))
 ax.set_aspect('equal')
 ax.axis('off')
 ax.set_xlim(-2, 2)
