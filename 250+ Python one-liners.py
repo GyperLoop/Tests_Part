@@ -3,6 +3,11 @@ Welcome to 250+ Python one-liners!
 Here are some handy Python one-liners for various tasks.
 Thank you for stopping by!
 """
+import snoop
+from birdseye import eye
+
+@snoop
+@eye
 #1 Convert Celsius to Fahrenheit
 def celsius_to_fahrenheit(celsius):
     return (celsius * 9 / 5) + 32
