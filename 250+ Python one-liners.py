@@ -1059,8 +1059,8 @@ print(f"Area of rectangle: {area}")
 def sum_of_even_numbers(arr):
     return sum(num for num in arr if num % 2 == 0)
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-sum = sum_of_even_numbers(arr)
-print(f"Sum of even numbers: {sum}")
+total = sum_of_even_numbers(arr)
+print(f"Sum of even numbers: {total}")
 
 #156 Calculate the volume of a cylinder
 import math
@@ -1068,3 +1068,36 @@ def cylinder_volume(radius, height):
     return math.pi * radius ** 2 * height
 volume = cylinder_volume(5, 10)
 print(f"Volume of cylinder: {volume}")
+
+#157 Bbq slewer analyzer
+def bbq_slewers(grill):
+    vegetarian_count = sum(1 for item in grill if "-x" not in item)
+    meat_count = len(grill) - vegetarian_count
+    return [vegetarian_count, meat_count]
+grill = ["-o", "-o", "-x", "-o", "-x"]
+result = bbq_slewers(grill)
+print(f"Vegetarian: {result[0]}, Meat: {result[1]}")
+
+#158 Missing number finder
+def find_missing_number(arr):
+    return 55 -  sum(arr)
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,]
+missing_number = find_missing_number(numbers)
+print(f"Missing number: {missing_number}")
+
+#159 Convert decimal number to octal
+def decimal_to_octal(num):
+    return oct(num).lstrip("0o")
+print(decimal_to_octal(65))
+print(decimal_to_octal(8))
+
+#160 Collatz sequence analyzer
+def collatz(num):
+    count = 0
+    while num != 1:
+        num = num // 2 if num % 2 == 0 else 3 * num + 1
+        count += 1
+    return count
+num = 27
+steps = collatz(num)
+print(f"Collatz steps for {num}: {steps}")
