@@ -16,7 +16,7 @@ def get_color(T: float) -> tuple:
     """Get color based on time T"""
     return tuple(colors[0][i] * (1 - T) + colors[1][i] * T for i in range(3))
 
-# Setup figure 
+# Setup figure, size
 fig, ax = plt.subplots(figsize=(6,6))
 ax.set_aspect('equal')
 ax.axis('off')
