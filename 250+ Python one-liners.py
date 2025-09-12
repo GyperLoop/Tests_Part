@@ -1106,3 +1106,39 @@ def collatz(num):
 num = 27
 steps = collatz(num)
 print(f"Collatz steps for {num}: {steps}")
+
+#161 Check if a string is a valid phone number 
+import re 
+def is_valid_phone_number(phone):
+    return bool(re.match(r'^\(\d{3}\) \d{3}-\d{4}$', phone))
+print(is_valid_phone_number("(123) 456-7890"))
+print(is_valid_phone_number("123-456-7890"))
+
+#162 Find the sum of the first n natural numbers
+def sum_of_natural_numbers(n):
+    return n * (n + 1) // 2 
+print(sum_of_natural_numbers(10))
+print(sum_of_natural_numbers(100))
+
+#163 Vowel dasher
+import re 
+def dashed(string):
+    return re.sub(r'[aeiouAEIOU]', lambda x: '-' if x.group() else x.group(), string)
+print(dashed("Hello World"))
+print(dashed("Python is fun"))
+
+#164 Find the factors of a number
+def factors(num):
+    result = []
+    for i in range(2, num):
+        if num % i == 0:
+            result.append(i)
+    return result
+print(",".join(map(str, factors(28))))
+print(",".join(map(str, factors(15))))
+
+#165 Calculate the area of a triangle  given the base and height
+def triangle_area(base, height):
+    return 0.5 * base * height
+area = triangle_area(5, 10)
+print(f"Area of triangle: {area}")
