@@ -1142,3 +1142,64 @@ def triangle_area(base, height):
     return 0.5 * base * height
 area = triangle_area(5, 10)
 print(f"Area of triangle: {area}")
+
+#166 Check if a string is a valid social security number
+import re 
+def is_valid_ssn(ssn):
+    return bool(re.match(r'^\d{3}-\d{2}-\d{4}$', ssn))
+print(is_valid_ssn("123-45-6789"))
+print(is_valid_ssn("123-456-789"))
+
+#167 Generate an array pf random numbers within a range
+import random 
+def rando_array_in_range(min_val, max_val, length):
+    return [random.randint(min_val, max_val) for _ in range(length)]
+print(rando_array_in_range(1, 100, 5))
+print(rando_array_in_range(50, 150, 10))
+
+#168 XO checker
+def xo_checker(string):
+    x_count = string.lower().count('x')
+    o_count = string.lower().count('o')
+    return x_count == o_count
+print(xo_checker("fsdxXoOsd"))
+print(xo_checker("sdfxXoOa"))
+
+#169 Check if a string is a valid ipv4 address
+import re
+def is_valid_ipv4(ip):
+    pattern = r"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+    return bool(re.match(pattern, ip))
+print(is_valid_ipv4("192.168.1.1"))
+print(is_valid_ipv4("256.256.256.256"))
+
+#170 Convert decimal number to hexadecimal
+def decimal_to_hex(num):
+    return hex(num).lstrip("0x").upper()
+print(decimal_to_hex(255))
+print(decimal_to_hex(16))
+print(decimal_to_hex(4095))
+
+#171 Check if a string is a valid date
+import re
+def is_valid_date(date):
+    return bool(re.match(r'^\d{4}-\d{2}-\d{2}$', date))
+print(is_valid_date("2023-08-23"))
+print(is_valid_date("23-08-2023"))
+
+#172 Chinese zodiac sign identifier
+def get_chinese_zodiac(birth_year):
+    zodiac_signs = ["Monkey", "Rooster", "Dog", "Pig", "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Sheep"]
+    return zodiac_signs[birth_year % 12]
+print(get_chinese_zodiac(1990))
+print(get_chinese_zodiac(2023))
+print(get_chinese_zodiac(1999))
+
+#173 Check is a string is a valid password
+import re
+def is_valid_password(password):
+    pattern = r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{4,16}$'
+    return bool(re.match(pattern, password))
+print(is_valid_password("61kd*"))
+print(is_valid_password("<ss@5&+-iH_ih^>O"))
+print(is_valid_password("n65\/N.v"))
