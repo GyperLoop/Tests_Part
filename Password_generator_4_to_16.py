@@ -5,19 +5,20 @@ import secrets
 import string
 import re 
 
+LETTERS = string.ascii_letters    # a-z, A-Z
+DIGITS = string.digits              # 0-9
+SYMBOLS = string.punctuation         # special characters
+ALL_CHARACTERS = LETTERS + DIGITS + SYMBOLS
+
 def generate_password(length: int) -> str:
   if length < 4 or length > 16:
     raise ValueError("Password length must be between 4 and 16 characters.")
-  LETTERS = string.ascii_letters    # a-z, A-Z
-  DIGITS = string.digits              # 0-9
-  SYMBOLS = string.punctuation         # special characters
-  ALL_CHARACTERS = LETTERS + DIGITS + SYMBOLS
   password = [secrets.choice(LETTERS), secrets.choice(DIGITS), secrets.choice(SYMBOLS)]
   password += [secrets.choice(ALL_CHARACTERS) for _ in range(length - 3)]
   secrets.SystemRandom().shuffle(password)
   return ''.join(password)
 
-def is_valid_password(password):
+def is_valid_password(password: str) -> bool:
     pattern = r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{4,16}$'
     return bool(re.fullmatch(pattern, password))
 
