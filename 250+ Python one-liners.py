@@ -1199,7 +1199,7 @@ print(get_chinese_zodiac(1999))
 import re
 def is_valid_password(password):
     pattern = r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{4,16}$'
-    return bool(re.match(pattern, password))
+    return bool(re.fullmatch(pattern, password))
 print(is_valid_password("61kd*"))
 print(is_valid_password("<ss@5&+-iH_ih^>O"))
 print(is_valid_password("n65\/N.v"))
