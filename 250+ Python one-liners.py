@@ -1203,3 +1203,69 @@ def is_valid_password(password):
 print(is_valid_password("61kd*"))
 print(is_valid_password("<ss@5&+-iH_ih^>O"))
 print(is_valid_password("n65\/N.v"))
+
+#174 Find the NTH fibonacci number 
+def fibonacci(n):
+    return n - 1 if n <= 2 else fibonacci(n - 1) + fibonacci(n - 2)
+print(fibonacci(7))
+
+#175 Diving minigame checker
+def diving_minigame(arr):
+    return bool((lambda score: next((False for score_change in arr if score <= 0 or (score_change < 0 and (score:= max(0, score - 2)) < 1) or (score_change >= 0 and (score:= min(score + 4, 10)) > 0)), True))(10))
+print(diving_minigame([1, -1, -1, 1, 1, -1, -1, -1, 1, 1]))
+print(diving_minigame([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]))
+print(diving_minigame([3, 4, 545, 45, 65, 76, 8, 9, 5, 34, ]))
+
+#176 Roger`s shooting score calculator
+def roger_shots(arr):
+    return sum(0.5 for shot in arr if shot in ["Bang!", "BangBang!"])
+print(roger_shots(["Bang!", "Miss", "BangBang!", "Bang!"]))
+print(roger_shots(["Miss", "Miss", "Miss"]))
+print(roger_shots(["BangBang!", "BangBang!", "Bang!", "Bang!", "Bang!"]))
+
+#177 Middle character of string
+def get_middle(s):
+    mid = len(s) // 2
+    return s[mid] if len(s) % 2 != 0 else s[mid - 1: mid + 1]
+print(get_middle("testing"))
+print(get_middle("middle"))
+
+#178 Calculate the volume of a cube
+def cube_volume(side):
+    return side ** 3
+print(cube_volume(3))
+print(cube_volume(5))
+
+#179 Check if a string is a valid credit card number
+import re
+def is_valid_credit_card(card_number):
+    regex = re.compile(r'^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12}|(?:2131|1800|35\d{3})\d{11})$')
+    return bool(regex.match(card_number.replace(" ", "").replace("-", "")))
+print(is_valid_credit_card("4539 1488 0343 6467"))
+print(is_valid_credit_card("6011-0009-9013-9424"))
+
+#180 Calculate the perimeter of a triangle
+def triangle_perimeter(side1, side2, side3):
+    return side1 + side2 + side3
+print(triangle_perimeter(3, 4, 5))
+print(triangle_perimeter(5, 12, 13))
+
+#181 Check if a number is a vampire number
+def is_vampire_number(num):
+    num_str = str(num)
+    num_len = len(num_str)
+    for factor1 in range(10 ** (num_len // 2 - 1), int(num ** 0.5) + 1):
+        if num % factor1 == 0:
+            factor2 = num // factor1
+            if len(str(factor2)) == num_len // 2 and not (str(factor1).endswith('0') and str(factor2).endswith('0')):
+                if sorted(str(factor1) + str(factor2)) == sorted(num_str):
+                    return True
+    return False
+print(is_vampire_number(1260))
+print(is_vampire_number(1234))
+
+#182 Obsolete sum converter
+def get_abs_sum(arr):
+    return sum(abs(num) for num in arr)
+print(get_abs_sum([-1, -2, 3, 4, -5]))
+print(get_abs_sum([-10, -20, -30]))
