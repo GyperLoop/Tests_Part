@@ -1269,3 +1269,34 @@ def get_abs_sum(arr):
     return sum(abs(num) for num in arr)
 print(get_abs_sum([-1, -2, 3, 4, -5]))
 print(get_abs_sum([-10, -20, -30]))
+
+#183 Check if a number is a duck number
+def is_duck_number(num):
+    num_str = str(num)
+    return '0' in num_str and num_str[0] != '0'
+print(is_duck_number(1023))
+print(is_duck_number(5345435))
+
+#184 Generate a random password
+import random, string
+
+def random_password(length):
+    chars = string.ascii_letters + string.digits
+    return ''.join(random.choice(chars) for _ in range(length))
+print(random_password(8))
+
+#185 Calculate the area of a trapezoid
+def trapezoid_area(base1, base2, height):
+    return 0.5 * (base1 + base2) * height
+print(trapezoid_area(4, 8, 6))
+
+#186 Check if a number is a kaprekar number
+def is_kaprekar_number(num):
+    square = num ** 2
+    square_str = str(square)
+    num_str = str(num)
+    left = int(square_str[:len(num_str)])
+    right = int(square_str[-len(num_str):])
+    return left + right == num
+print(is_kaprekar_number(9))
+print(is_kaprekar_number(34))
