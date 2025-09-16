@@ -1300,3 +1300,25 @@ def is_kaprekar_number(num):
     return left + right == num
 print(is_kaprekar_number(9))
 print(is_kaprekar_number(34))
+
+#187 Calculate the volume of a cone
+import math
+def cone_volume(radius, height):
+    return (1/3) * math.pi * radius ** 2 * height
+print(cone_volume(5, 10))
+print(cone_volume(33, 444))
+
+#188 Check if a string is a valid us phone number(US)
+import re
+def is_valid_us_phone_number(phone):
+    pattern = r"^(?:(?:\+1\s?)?(?:\(\d{3}\)?[\s.-]?)?\d{3}[\s.-]?\d{4})$"
+    return bool(re.match(pattern, phone))
+print(is_valid_us_phone_number("+1 (123) 456-7890"))
+print(is_valid_us_phone_number("123-456-7890"))
+
+#189 Sastry number checker
+import math
+def is_sastry(num):
+    return math.sqrt(int(str(num) + str(num + 1))) % 1 == 0
+print(is_sastry(183))
+print(is_sastry(184))
