@@ -5,32 +5,35 @@ Thank you for stopping by!
 """
 import snoop
 from birdseye import eye
+from colorama import init, Fore
+
+init()
+
+print(Fore.RED)
 
 @snoop
 @eye
 #1 Convert Celsius to Fahrenheit
 def celsius_to_fahrenheit(celsius):
     return (celsius * 9 / 5) + 32
-
 print(celsius_to_fahrenheit(25))                        #TODO:  77.0
+
+print(Fore.GREEN)                                                                                                                      #TODO: change color printf
 
 #2 Swap two variables
 def swap_without_temp(a, b):
     return b, a
-
 result = swap_without_temp(5, 10)
 print(f"After swapping: a = {result[1]}, b = {result[0]}")              #TODO: a = 5, b = 10
 
 #3 Convert RGB to HEX
 def rgb_to_hex(r, g, b):
     return f"#{((r<<16) + (g<<8) + b):06X}"
-
 print(rgb_to_hex(0, 51, 255))                               #TODO: #0033FF
 
 #4 Transpose of a matrix
 def transpose_matrix(matrix):
     return [list(row) for row in zip(*matrix)]
-
 matrix = [
     [1,2,3],
     [4,5,6],
@@ -43,27 +46,23 @@ print("\n".join(",".join(map(str, row)) for row in transpose_matrix(matrix)))   
 from datetime import datetime
 def is_date_valid(val):
     return datetime.strptime(val, "%B %d, %Y %H:%M:%S") if val else False
-
 print(is_date_valid("December 17, 1995 03:24:00"))                      #TODO: 1995-12-17 03:24:00
 
 #6 Find the days of year
 from datetime import datetime
 def day_of_year(date):
     return date.timetuple().tm_yday
-
 print(day_of_year(datetime(2024, 10, 6)))                        #TODO: 280
 
 #7 Capitalize a sting
 def capitalize_string(s):
     return s[0].upper() + s[1:] if s else ""
-
 print(capitalize_string("follow for more"))                     #TODO: Follow for more
 
 #8 Find the number of days between two days
 from datetime import datetime
 def day_diff(day1, day2):
     return abs((date2 - day1).days) + 1
-
 date1 = datetime(2020, 10, 21)
 date2 = datetime(2021, 10, 22)
 print(day_diff(date1, date2))                                                    #TODO: 365
@@ -71,28 +70,24 @@ print(day_diff(date1, date2))                                                   
 #9 Find the frecuecy of character in a string
 def character_frequency(string):
     return {char: string.count(char) for char in set(string)}
-
 print(",".join([f"{k}=>{v}" for k, v in character_frequency("hello").items()]))    #TODO: h=>1,l=>2,e=>1,o=>1
 
 #10 Generate random HEX
 import random
 def random_hex():
     return f"#{random.randint(0, 0xFFFFFF):06X}"
-
 print(random_hex())                                         #TODO: random colour
 
 #11 Create random strings
 import random, string
 def random_string(length):
     return "".join(random.choice(string.ascii_lowercase) for _ in range(length))
-
 print(random_string(5))                                    #TODO: random string
 
 #12 Find the odd occurrence
 import random, functools
 def find_odd(ar):
     return functools.reduce(lambda x, y: x ^ y, ar)
-
 ar = [random.randint(1, 100) for _ in range(random.randint(10, 20))]
 
 print("Input:", " ".join(map(str, ar)))
@@ -101,7 +96,6 @@ print("Result:", find_odd(ar))
 #13 Check if a number is even or odd
 def is_even(num):
     return num % 2 == 0
-
 print(is_even(3))
 
 #14 Simple sum
