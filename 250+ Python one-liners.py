@@ -1322,3 +1322,55 @@ def is_sastry(num):
     return math.sqrt(int(str(num) + str(num + 1))) % 1 == 0
 print(is_sastry(183))
 print(is_sastry(184))
+
+#190 Factor chain checker
+def factor_chain(arr):
+    return all(arr[i + 1] % arr[i] == 0 for i in range(len(arr) - 1))
+chain1 = [1,2,4,5,7,8]
+chain2 = [4,6,7,8,2,5]
+print(factor_chain(chain1))
+print(factor_chain(chain2))
+
+#191 Calculate boxes in algebra sequence
+def box_seq(step):
+    return step + (step % 2 * 2)
+print(box_seq(5))
+print(box_seq(8))
+
+#192 Calculate the volume of a cuboid
+def cuboid_volume(lenght, width, height):
+    return lenght * width * height
+volume = cuboid_volume(5, 10, 8)
+print("Volume of the cuboid:", volume)
+
+#193 Triangular number sequence
+def triangular(n):
+    return n * (n + 1) // 2
+print("Triangular equals:", triangular(1), "\n--input data--\n\t->1<-")
+print("Triangular equals:", triangular(2), "\n--input data--\n\t->2<-")
+print("Triangular equals:", triangular(5), "\n--input data--\n\t->5<-")
+
+#194 Generate a random color
+import random
+def random_color_hex():
+    return '#{0:06x}'.format(random.randint(0, 0xFFFFFF))
+print("Your color:", random_color_hex())
+
+#195 Calculate the area of a circle sector
+import math
+def circle_sector_area(radius, angle):
+    return (angle/360) * math.pi * radius ** 2
+print("Radius:", circle_sector_area(5, 90), "\n--input data--\n\t->5, 90<-")
+
+#196 Calculate the area of a regular polygon
+import math
+def regular_polygon_area(side_length, num_of_sides):
+    return (num_of_sides * side_length ** 2) / (4 * math.tan(math.pi / num_of_sides))
+print("Poligon area:", regular_polygon_area(5, 6), "\n--input data--\n\t->5, 6<-")
+
+#197 Remove duplicates from array
+def remove_duplicates(arr):
+    return list(dict.fromkeys(arr))
+array = [1,2,3,4,5,6,7,7,7,1,1,9,0,9]
+result = remove_duplicates(array)
+print("Array without duplicates:", ", ".join(map(str, result)), f"\n--input data-->{array}")
