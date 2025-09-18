@@ -1368,3 +1368,27 @@ def remove_duplicates(arr):
 array = [1,2,3,4,5,6,7,7,7,1,1,9,0,9]
 result = remove_duplicates(array)
 print("Array without duplicates:", ", ".join(map(str, result)), f"\n--input data-->{array}")
+
+#198 Calculate the area of an ellipse
+import math
+def ellipse_area(a, b):
+    return math.pi * a * b
+print(ellipse_area(5, 10))
+print(ellipse_area(10, 20))
+
+#199 Check if a number is a leyland number
+def is_leyland_number(num):
+    for x in range(2, int(num ** (1/3)) + 1):
+        for y in range(x + 1, num // x + 1):
+            if x ** y + y ** x == num:
+                return True
+            return False
+print(is_leyland_number(17))
+print(is_leyland_number(30))
+
+#200 Generate a random uuid
+import random, string
+def random_uuid():
+    random_hex = lambda length:''.join(random.choice(string.hexdigits) for _ in range(length))
+    return f"{random_hex(8)}-{random_hex(4)}-4{random_hex(3)}-{random_hex(4)}-{random_hex(12)}".lower()
+print(random_uuid())
