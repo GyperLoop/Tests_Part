@@ -1392,3 +1392,41 @@ def random_uuid():
     random_hex = lambda length:''.join(random.choice(string.hexdigits) for _ in range(length))
     return f"{random_hex(8)}-{random_hex(4)}-4{random_hex(3)}-{random_hex(4)}-{random_hex(12)}".lower()
 print(random_uuid())
+
+#201 Check if a string is a valid ipv6 address
+import re
+def is_valid_ipv6(ip):
+    pattern = r"^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$"
+    return bool(re.match(pattern, ip))
+print(is_valid_ipv6("2001:0db8:85a3:0000:0000:8a2e:0370:7334"))
+print(is_valid_ipv6("2001:0db8:85a3::8a2e:0370:7334"))
+
+#202 Calculate the area of a parallelogram
+def parallelogram_area(base_length, height):
+    return base_length * height
+print(parallelogram_area(5, 10))
+
+#203 Check if a string is a valid mac address
+import re
+def is_valid_mac_address(mac):
+    pattern = r"^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"
+    return bool(re.match(pattern, mac))
+print(is_valid_mac_address("00:1A:2B:3C:4D:5E"))
+print(is_valid_mac_address("00:1A:2B:3C:4D"))
+
+#204 Convert rgb to hsl(hue, saturation, lightness)
+import colorsys
+def rgb_to_hsl(rgb):
+    r, g, b = rgb
+    h, l, s = colorsys.rgb_to_hls(r / 255.0, g / 255.0, b / 255.0)
+    return h * 360, s * 100, l * 100
+rgb_value = (255, 0, 0) #Red color
+hsl_value = rgb_to_hsl(rgb_value)
+print(hsl_value)
+
+#205 Check if a number is a pandigital number
+def is_pandigital_number(num):
+    num_str = str(num)
+    return len(set(num_str)) == len(num_str) and '0' not in num_str and max(num_str) == str(len(num_str))
+print(is_pandigital_number(123456789))
+print(is_pandigital_number(987654321))
