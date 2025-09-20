@@ -1428,7 +1428,6 @@ def is_pandigital_number(num):
     num_str = str(num)
     return len(set(num_str)) == len(num_str) and '0' not in num_str and max(num_str) == str(len(num_str))
 print(is_pandigital_number(123456789))
-
 print(is_pandigital_number(987654321))
 
 #206 Neutralize strings interaction
