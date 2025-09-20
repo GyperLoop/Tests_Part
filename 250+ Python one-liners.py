@@ -1430,3 +1430,45 @@ def is_pandigital_number(num):
 print(is_pandigital_number(123456789))
 
 print(is_pandigital_number(987654321))
+
+#206 Neutralize strings interaction
+def neutralise(s1, s2):
+    return ''.join(c1 if c1 == c2 else '0' for c1, c2 in zip(s1, s2))
+s1 = "++-+"
+s2 = "+-++"
+print(neutralise(s1, s2))
+
+#207 Convert yen to usd
+def yen_to_usd(yen):
+    return round(yen / 107.5, 2)
+print(yen_to_usd(1000))
+
+#208 Calculate war of number
+def war_of_numbers(arr):
+    even_sum = sum(x for x in arr if x % 2 == 0)
+    odd_sum = sum(x for x in arr if x % 2 != 0)
+    return abs(even_sum - odd_sum)
+print(war_of_numbers([1,2,3,4,5,5,6]))
+
+#209 Calculate iterated square root
+import math
+def isqrt(n):
+    if n < 0:
+        return "invalid"
+    else:
+        return str(int(math.log(math.sqrt(n), 2)))
+print(isqrt(16))
+print(isqrt(25))
+print(isqrt(-25))
+
+#210 Determine rock, paper, scissors winner
+def rps(p1, p2):
+    if p1 == p2:
+        return "It`s a draw"
+    elif (p1 == "Rock" and p2 == "Scissors") or (p1 == "Scissors" and p2 == "Paper") or (p1 == "Paper" and p2 == "Rock"):
+        return "The winner is p1"
+    else:
+        return "The winner is p2"
+print(rps("Rock", "Paper"))
+print(rps("Scissors", "Paper"))
+print(rps("Rock", "Rock"))
