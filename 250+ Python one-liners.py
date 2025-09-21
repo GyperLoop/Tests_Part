@@ -1471,3 +1471,29 @@ def rps(p1, p2):
 print(rps("Rock", "Paper"))
 print(rps("Scissors", "Paper"))
 print(rps("Rock", "Rock"))
+
+#211 Replace sausages with "wurst"
+import re
+def wurst_is_better(text):
+    return re.sub(r'kielbasa|chorizo|moronga|salami|sausage|andiuille|naem|merguez|gurka|snorkers|pepperoni', 'Wurst', 'text', flags=re.IGNORECASE)
+input_text = "I love kielbasa, chorizo, and pepperoni pizza."
+print(wurst_is_better(input_text))
+
+#212 Update ages after years
+def after_n_years(people, years):
+    return {name: age + abs(years) for name, age in people.items()}
+ages = {
+    "John": 30,
+    "Alice": 25,
+    "Bob": 40
+}
+updated_ages = after_n_years(ages, 5)
+for name, age in updated_ages.items():
+    print(f"{name}: {age}")
+
+#213 Detect syncopation in music
+def has_syncopation(s):
+    return any(c == '#' for idx, c in enumerate(s) if idx % 2 == 1)
+print(has_syncopation("#,#,#"))
+print(has_syncopation("###"))
+print(has_syncopation("##,#,#"))
