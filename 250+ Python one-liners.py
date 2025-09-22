@@ -1497,3 +1497,31 @@ def has_syncopation(s):
 print(has_syncopation("#,#,#"))
 print(has_syncopation("###"))
 print(has_syncopation("##,#,#"))
+
+#214 Extend vowels in a word
+import re
+def extend_vowels(word, num):
+    if num < 0 or not isinstance(num, int):
+        return "invalid"
+    return re.sub(r'[aeiouAEIOU]', lambda x: x.group(0) * (num + 1), word)
+print(extend_vowels("Hello", 2))
+print(extend_vowels("World", -1))
+
+#215 Generate a random alphanumeric string
+import random, string
+def random_alphanumeric_string(length):
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+print(random_alphanumeric_string(8))
+
+#216 Calculate the area of a regular hexagon
+import math
+def regular_hexagon_area(side_length):
+    return (3 * math.sqrt(3) * side_length ** 2) / 2
+print(regular_hexagon_area(5))
+
+#217 Calculate cube diagonal from volume
+import math
+def cube_diagonal(volume):
+    return round(math.pow(volume, 1/3) * math.sqrt(3), 2)
+print(cube_diagonal(27))
+print(cube_diagonal(55))
