@@ -1525,3 +1525,22 @@ def cube_diagonal(volume):
     return round(math.pow(volume, 1/3) * math.sqrt(3), 2)
 print(cube_diagonal(27))
 print(cube_diagonal(55))
+
+#218 Bigint decimal string formatter
+def format_bigint(big_number, decimals):
+    big_number_str = str(big_number)
+    return big_number_str[:len(big_number_str) - decimals] + "." + big_number_str[len(big_number_str) - decimals:]
+print(format_bigint(123456789012345678901234567890, 5))
+
+#219 Check if a number is a reversible number
+def is_reversible_number(num):
+    return num + int(str(num)[::-1]) == sum(int(digit) for digit in str(num))
+print(is_reversible_number(36))
+print(is_reversible_number(45))
+print(is_reversible_number(10))
+
+#220 Calcualte the circumference of a circle
+import math
+def circle_circumference(radius):
+    return 2 * math.pi * radius
+print(circle_circumference(5))
