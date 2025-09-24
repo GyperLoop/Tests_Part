@@ -1544,3 +1544,34 @@ import math
 def circle_circumference(radius):
     return 2 * math.pi * radius
 print(circle_circumference(5))
+
+#221 Find the shortest word in a string
+def shortest_word(string):
+    return min(string.split(), key=len)
+print(shortest_word("This is a test sentence"))
+print(shortest_word("This should been longest sentence"))
+
+#222 Find the longest word length in a string
+def longest_word_length(string):
+    return max(string.split(), key=len)
+print(longest_word_length("This is a test sentence"))
+print(longest_word_length("This should been longest sentence"))
+
+#223 Find the sum of proper divisors of a number
+def sum_of_proper_divisiors(num):
+    return sum(i for i in range(1, num) if num % i == 0)
+print(sum_of_proper_divisiors(28))
+print(sum_of_proper_divisiors(12))
+
+#224 Check if a number is a unitary perfect number
+def is_unitary_perfect_number(num):
+    def gcd(a, b):
+        return a if b == 0 else gcd(b, a % b)
+    return num == sum(i for i in range(1, num) if num % i == 0 and gcd(num, i) == 1)
+print(is_unitary_perfect_number(18))
+print(is_unitary_perfect_number(28))
+
+#225 Calculate the perimeter of a regular polygon
+def regular_polygon_perimeter(side_length, num_sides):
+    return side_length * num_sides
+print(regular_polygon_perimeter(5, 6))
