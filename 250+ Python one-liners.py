@@ -1575,3 +1575,35 @@ print(is_unitary_perfect_number(28))
 def regular_polygon_perimeter(side_length, num_sides):
     return side_length * num_sides
 print(regular_polygon_perimeter(5, 6))
+
+#226 Calculate the area of an equilateral triangle
+import math
+def equilateral_triangle_area(side_length):
+    return (math.sqrt(3) * side_length ** 2) / 4
+print(equilateral_triangle_area(5))
+
+#227 Check if a number is a harshad smith number
+def is_harshad_smith_number(num):
+    return all(num % i != 0 for i in range(2, int(num ** 0.5) + 1)) and sum(int(d) for d in str(num) == num and sum(int(d) for d in str(num)) == sum(sum(int(d) for d in str(f)) for f in ([i for i in range(2, num) if num % i == 0])))
+print(is_harshad_smith_number(22))
+print(is_harshad_smith_number(10))
+
+#228 Check if a number is a perfect power
+def is_perfect_power(num):
+    return any(base ** exponent == num for base in range(2, int(num ** 0.5) + 1) for exponent in range(2, int(num ** 0.5) + 1))
+print(is_perfect_power(64))
+print(is_perfect_power(25))
+
+#229 Drop elements from array
+def drop(arr, val=1):
+    return arr[val:]
+print(drop([1,2,3]))
+print(drop([1,2,3], 2))
+print(drop([1,2,3], 0))
+print(drop(["banana", "orange", "watermelon", "mango"], 2))
+
+#230 Maximum total of last five elements in an array
+def max_total(nums):
+    return sum(sorted(num)[-5:])
+print(max_total([1,1,0,3,10,10,10,10,1]))
+print(max_total([0,0,0,0,0,0,0,0,0,100]))
