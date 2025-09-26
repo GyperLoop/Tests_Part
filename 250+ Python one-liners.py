@@ -1607,3 +1607,15 @@ def max_total(nums):
     return sum(sorted(num)[-5:])
 print(max_total([1,1,0,3,10,10,10,10,1]))
 print(max_total([0,0,0,0,0,0,0,0,0,100]))
+
+#231 Calculate the area of a regular pentagon
+import math
+def regular_pentagon_area(side_length):
+    return (1 / 4) * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * side_length ** 2
+print(regular_pentagon_area(5))
+
+#232 Calculate the volume of a pyramid
+def pyramid_volume(base_area, height):
+    return (1 / 3) * base_area * height
+print(pyramid_volume(25, 10))
+print(pyramid_volume(44, 15))
