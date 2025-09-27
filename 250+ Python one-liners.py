@@ -1619,3 +1619,20 @@ def pyramid_volume(base_area, height):
     return (1 / 3) * base_area * height
 print(pyramid_volume(25, 10))
 print(pyramid_volume(44, 15))
+
+#233 Calculate the surface area of a cube
+def cube_surface_area(side_length):
+    return 6 * side_length ** 2
+print(cube_surface_area(5))
+
+#234 Find the second largest number in an array
+def second_largest(arr):
+    sorted_arr = sorted(arr, reverse=True)
+    return sorted_arr[1]
+print(second_largest([1,2,3,4,5,67,88]))
+
+#235 Calculate the area of a regular octagon
+def regular_octagon_area(side_length):
+    return 2 * (1 + 2 ** 0.5) * side_length ** 2
+print(regular_octagon_area(5))
+print(regular_octagon_area(10))
