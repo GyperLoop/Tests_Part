@@ -1636,3 +1636,38 @@ def regular_octagon_area(side_length):
     return 2 * (1 + 2 ** 0.5) * side_length ** 2
 print(regular_octagon_area(5))
 print(regular_octagon_area(10))
+
+#236 Check if a number is a repunit number
+import re
+def is_repunit_number(num):
+    return bool(re.match("^1+$", str(num)))
+print(is_repunit_number(111))
+print(is_repunit_number(11))
+
+#237 Calculate the volume of an ellipsoid
+import math
+def ellipsoid_volume(a, b, c):
+    return (4/3) * math.pi * a * b * c
+print(ellipsoid_volume(5, 3, 2))
+print(ellipsoid_volume(44, 55, 66))
+
+#238 Check if a string is a valid url
+import re
+def is_valid_url_alt(url):
+    return bool(re.match(r"^(ftp|https):W[^ ]+$", url))
+print(is_valid_url_alt("https://www.example.com"))
+print(is_valid_url_alt("invalid url"))
+
+#239 Check if a string is a valid tax identification number(TIN)
+import re
+def is_valid_tin(tin):
+    return bool(re.match(r"^[A-Z]{2}\d{6}[A-Z\d]{2}$", tin))
+print(is_valid_tin("AB123456CD"))
+print(is_valid_tin("ABC123523dfr"))
+
+#240 Check if a string is a valid ISBN
+import re
+def is_valid_isbn(isbn):
+    return bool(re.match(r"^(?:\d{9}[\dX]|(?:\d{3}-){2}\d{1}[\dX])$", isbn))
+print(is_valid_isbn("123456789"))
+print(is_valid_isbn("09s834f3478d87z"))
