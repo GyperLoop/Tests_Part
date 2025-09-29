@@ -1671,3 +1671,38 @@ def is_valid_isbn(isbn):
     return bool(re.match(r"^(?:\d{9}[\dX]|(?:\d{3}-){2}\d{1}[\dX])$", isbn))
 print(is_valid_isbn("123456789"))
 print(is_valid_isbn("09s834f3478d87z"))
+
+#241 Check if a string is a valid ip address
+import socket
+def is_valid_ip_address(ip):
+    try:
+        socket.inet_aton(ip)
+        return True
+    except socket.error:
+        return False
+print(is_valid_ip_address("192.168.1.1"))
+print(is_valid_ip_address("234.230.0.0"))
+
+#242 Reverse a string
+def reverse_string_recursive(s):
+    return s if len(s) <= 1 else reverse_string_recursive(s[1:]) + s[0]
+print(reverse_string_recursive("Hello"))
+print(reverse_string_recursive("What`s app"))
+
+#243 Count the occurrences of each element in an array
+from collections import Counter
+def count_occurrences(arr):
+    return dict(Counter(arr))
+print(count_occurrences([1,2,3,4,5,63,2,1,2,3]))
+
+#244 Check if two arrays are equal
+def arrays_are_equal(arr1, arr2):
+    return arr1 == arr2
+print(arrays_are_equal([1,2,3], [1, 2, 3]))
+print(arrays_are_equal([1,2,3], [3,2,1]))
+
+#245 Find the minimum value in an array
+def find_min_value(arr):
+    return min(arr)
+numbers = [2,7,1,9,6]
+print(find_min_value(numbers))
