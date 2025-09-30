@@ -1706,3 +1706,21 @@ def find_min_value(arr):
     return min(arr)
 numbers = [2,7,1,9,6]
 print(find_min_value(numbers))
+
+#246 Flatten an array of nested arrays
+def flatten_array(arr):
+    return [item for sublist in arr for item in sublist]
+nested_arrays = [[1, 2],[3, 4], [5, 6]]
+print(",".join(map(str, flatten_array(nested_arrays))))
+
+#247 Find the average of numbers in an array
+def find_average(arr):
+    return sum(arr) /  len(arr)
+numbers = [1, 2, 3, 4, 5]
+print(find_average(numbers))
+
+#248 Sum the squares of numbers in an array
+def sum_squares(arr):
+     return sum(num * num for num in arr)
+numbers = [1, 2, 3, 4, 5]
+print(sum_squares(numbers))
