@@ -1723,4 +1723,34 @@ print(find_average(numbers))
 def sum_squares(arr):
      return sum(num * num for num in arr)
 numbers = [1, 2, 3, 4, 5]
-print(sum_squares(numbers))
+print(sum_squares(numbers))  
+
+#249 Check if a string is a palindrome
+import re
+def is_palindrome_ignoring_non_alphanumeric(s):
+    cleaned_str = re.sub(r'[^a-z0-9]', '', s.lower())
+    return cleaned_str == cleaned_str[::-1]
+print(is_palindrome_ignoring_non_alphanumeric("A man, a plan, a canal, Panama!"))
+
+#250 Move zeros to the end
+def move_zeros(arr):
+    non_zero_elements = [x for x in arr if x != 0]
+    zero_count = arr.count(0)
+    return non_zero_elements + [0] * zero_count
+result = move_zeros([1,2,3,4,5,0,9,0,65,74,0])
+print(','.join(map(str, result)))
+
+#251 Find the median of numbers in an array
+def find_median(arr):
+    sorted_arr = sorted(arr)
+    middle = len(sorted_arr) // 2
+    return (sorted_arr[middle] + sorted_arr[~middle]) / 2 if len(sorted_arr) % 2 == 0 else sorted_arr[middle]
+print(find_median([1,2,3,4,5,6,7,8]))
+
+#252 Chatroom status
+def chatroom_status(users):
+    return "no one online" if not users else f"{users[0]} online" if len(users) == 1 else f"{users[0]} and {users[1]} online" if len(users) == 2 else f"{users[0]}, {users[1]} and {len(users) - 2} more online"
+print(chatroom_status([]))
+print(chatroom_status(["becky647"]))
+print(chatroom_status(["becky647", "malcolm999"]))
+print(chatroom_status(["becky647", "malcolm999", "Anno3009", "AssHere", "What_df", "Anonimus"]))
