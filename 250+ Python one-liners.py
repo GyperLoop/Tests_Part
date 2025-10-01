@@ -1604,7 +1604,7 @@ print(drop(["banana", "orange", "watermelon", "mango"], 2))
 
 #230 Maximum total of last five elements in an array
 def max_total(nums):
-    return sum(sorted(num)[-5:])
+    return sum(sorted(nums)[-5:])
 print(max_total([1,1,0,3,10,10,10,10,1]))
 print(max_total([0,0,0,0,0,0,0,0,0,100]))
 
