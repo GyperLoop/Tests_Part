@@ -1754,3 +1754,21 @@ print(chatroom_status([]))
 print(chatroom_status(["becky647"]))
 print(chatroom_status(["becky647", "malcolm999"]))
 print(chatroom_status(["becky647", "malcolm999", "Anno3009", "AssHere", "What_df", "Anonimus"]))
+
+#253 Find the asciii value of a character
+def get_ascii_value(c):
+    return ord(c)
+print(get_ascii_value('A'))
+
+#254 Calculate the area of a kite
+def area_of_kite(d1, d2):
+    return 0.5 * d1 * d2
+print(f"Area of the kite: {area_of_kite(10, 6)}")
+
+#255 Calculate the area of a sector
+import math
+def sector_area(radius, angle):
+    return math.pi * radius ** 2 * angle / 360
+print(f"Area of the sector: {sector_area(5, 50)}")
+
+#265
