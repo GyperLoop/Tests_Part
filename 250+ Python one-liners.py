@@ -1770,5 +1770,3 @@ import math
 def sector_area(radius, angle):
     return math.pi * radius ** 2 * angle / 360
 print(f"Area of the sector: {sector_area(5, 50)}")
-
-#265
