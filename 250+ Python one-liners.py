@@ -106,7 +106,6 @@ print(result)
 #15 Pyramid pattern
 def create_pyramid(rows):
     return [f"{'' * (rows - i)}{'*' * (2 * i - 1)}" for i in range(1, rows + 1)]
-
 pyramis = create_pyramid(22)
 for row in pyramis:
     print(row)
@@ -553,7 +552,6 @@ def IsFibonacci(num):
 def IsPerfectSquare(num):
     sqrt = int(num ** 0.5)
     return sqrt * sqrt == num
- 
 print(IsFibonacci(21))
 print(IsFibonacci(6))
 print(IsFibonacci(5))
@@ -606,7 +604,7 @@ def generate_array(length):
     return [random.randint(1, 100) for _ in range(length)]
 print(generate_array(5))
 
-#96 join path portions
+#96 Join path portions
 def join_path(portion1, portion2):
     return f"{portion1.rstrip('/')}/{portion2.lstrip('/')}"
 print(join_path("/home/user", "documents/file.txt"))
@@ -1272,7 +1270,6 @@ print(is_duck_number(5345435))
 
 #184 Generate a random password
 import random, string
-
 def random_password(length):
     chars = string.ascii_letters + string.digits
     return ''.join(random.choice(chars) for _ in range(length))
