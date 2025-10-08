@@ -665,14 +665,14 @@ def bitwise_operations(a, b):
     }
 print(bitwise_operations(5, 3))
 
-#156 Calculate the volume of a cylinder
+#102 Calculate the volume of a cylinder
 import math
 def cylinder_volume(radius, height):
     return math.pi * radius ** 2 * height
 volume = cylinder_volume(5, 10)
 print(f"Volume of cylinder: {volume}")
 
-#157 Bbq slewer analyzer
+#103 Bbq slewer analyzer
 def bbq_slewers(grill):
     vegetarian_count = sum(1 for item in grill if "-x" not in item)
     meat_count = len(grill) - vegetarian_count
@@ -681,20 +681,20 @@ grill = ["-o", "-o", "-x", "-o", "-x"]
 result = bbq_slewers(grill)
 print(f"Vegetarian: {result[0]}, Meat: {result[1]}")
 
-#158 Missing number finder
+#104 Missing number finder
 def find_missing_number(arr):
     return 55 -  sum(arr)
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,]
 missing_number = find_missing_number(numbers)
 print(f"Missing number: {missing_number}")
 
-#159 Convert decimal number to octal
+#105 Convert decimal number to octal
 def decimal_to_octal(num):
     return oct(num).lstrip("0o")
 print(decimal_to_octal(65))
 print(decimal_to_octal(8))
 
-#160 Collatz sequence analyzer
+#106 Collatz sequence analyzer
 def collatz(num):
     count = 0
     while num != 1:
@@ -705,27 +705,27 @@ num = 27
 steps = collatz(num)
 print(f"Collatz steps for {num}: {steps}")
 
-#163 Vowel dasher
+#107 Vowel dasher
 import re 
 def dashed(string):
     return re.sub(r'[aeiouAEIOU]', lambda x: '-' if x.group() else x.group(), string)
 print(dashed("Hello World"))
 print(dashed("Python is fun"))
 
-#165 Calculate the area of a triangle  given the base and height
+#108 Calculate the area of a triangle  given the base and height
 def triangle_area(base, height):
     return 0.5 * base * height
 area = triangle_area(5, 10)
 print(f"Area of triangle: {area}")
 
-#167 Generate an array pf random numbers within a range
+#109 Generate an array pf random numbers within a range
 import random 
 def rando_array_in_range(min_val, max_val, length):
     return [random.randint(min_val, max_val) for _ in range(length)]
 print(rando_array_in_range(1, 100, 5))
 print(rando_array_in_range(50, 150, 10))
 
-#168 XO checker
+#110 XO checker
 def xo_checker(string):
     x_count = string.lower().count('x')
     o_count = string.lower().count('o')
@@ -733,14 +733,14 @@ def xo_checker(string):
 print(xo_checker("fsdxXoOsd"))
 print(xo_checker("sdfxXoOa"))
 
-#170 Convert decimal number to hexadecimal
+#111 Convert decimal number to hexadecimal
 def decimal_to_hex(num):
     return hex(num).lstrip("0x").upper()
 print(decimal_to_hex(255))
 print(decimal_to_hex(16))
 print(decimal_to_hex(4095))
 
-#172 Chinese zodiac sign identifier
+#112 Chinese zodiac sign identifier
 def get_chinese_zodiac(birth_year):
     zodiac_signs = ["Monkey", "Rooster", "Dog", "Pig", "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Sheep"]
     return zodiac_signs[birth_year % 12]
@@ -748,72 +748,72 @@ print(get_chinese_zodiac(1990))
 print(get_chinese_zodiac(2023))
 print(get_chinese_zodiac(1999))
 
-#175 Diving minigame checker
+#113 Diving minigame checker
 def diving_minigame(arr):
     return bool((lambda score: next((False for score_change in arr if score <= 0 or (score_change < 0 and (score:= max(0, score - 2)) < 1) or (score_change >= 0 and (score:= min(score + 4, 10)) > 0)), True))(10))
 print(diving_minigame([1, -1, -1, 1, 1, -1, -1, -1, 1, 1]))
 print(diving_minigame([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]))
 print(diving_minigame([3, 4, 545, 45, 65, 76, 8, 9, 5, 34, ]))
 
-#176 Roger`s shooting score calculator
+#114 Roger`s shooting score calculator
 def roger_shots(arr):
     return sum(0.5 for shot in arr if shot in ["Bang!", "BangBang!"])
 print(roger_shots(["Bang!", "Miss", "BangBang!", "Bang!"]))
 print(roger_shots(["Miss", "Miss", "Miss"]))
 print(roger_shots(["BangBang!", "BangBang!", "Bang!", "Bang!", "Bang!"]))
 
-#177 Middle character of string
+#115 Middle character of string
 def get_middle(s):
     mid = len(s) // 2
     return s[mid] if len(s) % 2 != 0 else s[mid - 1: mid + 1]
 print(get_middle("testing"))
 print(get_middle("middle"))
 
-#178 Calculate the volume of a cube
+#116 Calculate the volume of a cube
 def cube_volume(side):
     return side ** 3
 print(cube_volume(3))
 print(cube_volume(5))
 
-#180 Calculate the perimeter of a triangle
+#117 Calculate the perimeter of a triangle
 def triangle_perimeter(side1, side2, side3):
     return side1 + side2 + side3
 print(triangle_perimeter(3, 4, 5))
 print(triangle_perimeter(5, 12, 13))
 
-#182 Obsolete sum converter
+#118 Obsolete sum converter
 def get_abs_sum(arr):
     return sum(abs(num) for num in arr)
 print(get_abs_sum([-1, -2, 3, 4, -5]))
 print(get_abs_sum([-10, -20, -30]))
 
-#184 Generate a random password
+#119 Generate a random password
 import random, string
 def random_password(length):
     chars = string.ascii_letters + string.digits
     return ''.join(random.choice(chars) for _ in range(length))
 print(random_password(8))
 
-#185 Calculate the area of a trapezoid
+#120 Calculate the area of a trapezoid
 def trapezoid_area(base1, base2, height):
     return 0.5 * (base1 + base2) * height
 print(trapezoid_area(4, 8, 6))
 
-#187 Calculate the volume of a cone
+#121 Calculate the volume of a cone
 import math
 def cone_volume(radius, height):
     return (1/3) * math.pi * radius ** 2 * height
 print(cone_volume(5, 10))
 print(cone_volume(33, 444))
 
-#189 Sastry number checker
+#122 Sastry number checker
 import math
 def is_sastry(num):
     return math.sqrt(int(str(num) + str(num + 1))) % 1 == 0
 print(is_sastry(183))
 print(is_sastry(184))
 
-#190 Factor chain checker
+#123 Factor chain checker
 def factor_chain(arr):
     return all(arr[i + 1] % arr[i] == 0 for i in range(len(arr) - 1))
 chain1 = [1,2,4,5,7,8]
@@ -821,70 +821,70 @@ chain2 = [4,6,7,8,2,5]
 print(factor_chain(chain1))
 print(factor_chain(chain2))
 
-#191 Calculate boxes in algebra sequence
+#124 Calculate boxes in algebra sequence
 def box_seq(step):
     return step + (step % 2 * 2)
 print(box_seq(5))
 print(box_seq(8))
 
-#192 Calculate the volume of a cuboid
+#125 Calculate the volume of a cuboid
 def cuboid_volume(lenght, width, height):
     return lenght * width * height
 volume = cuboid_volume(5, 10, 8)
 print("Volume of the cuboid:", volume)
 
-#193 Triangular number sequence
+#126 Triangular number sequence
 def triangular(n):
     return n * (n + 1) // 2
 print("Triangular equals:", triangular(1), "\n--input data--\n\t->1<-")
 print("Triangular equals:", triangular(2), "\n--input data--\n\t->2<-")
 print("Triangular equals:", triangular(5), "\n--input data--\n\t->5<-")
 
-#194 Generate a random color
+#127 Generate a random color
 import random
 def random_color_hex():
     return '#{0:06x}'.format(random.randint(0, 0xFFFFFF))
 print("Your color:", random_color_hex())
 
-#195 Calculate the area of a circle sector
+#128 Calculate the area of a circle sector
 import math
 def circle_sector_area(radius, angle):
     return (angle/360) * math.pi * radius ** 2
 print("Radius:", circle_sector_area(5, 90), "\n--input data--\n\t->5, 90<-")
 
-#196 Calculate the area of a regular polygon
+#129 Calculate the area of a regular polygon
 import math
 def regular_polygon_area(side_length, num_of_sides):
     return (num_of_sides * side_length ** 2) / (4 * math.tan(math.pi / num_of_sides))
 print("Poligon area:", regular_polygon_area(5, 6), "\n--input data--\n\t->5, 6<-")
 
-#197 Remove duplicates from array
+#130 Remove duplicates from array
 def remove_duplicates(arr):
     return list(dict.fromkeys(arr))
 array = [1,2,3,4,5,6,7,7,7,1,1,9,0,9]
 result = remove_duplicates(array)
 print("Array without duplicates:", ", ".join(map(str, result)), f"\n--input data-->{array}")
 
-#198 Calculate the area of an ellipse
+#131 Calculate the area of an ellipse
 import math
 def ellipse_area(a, b):
     return math.pi * a * b
 print(ellipse_area(5, 10))
 print(ellipse_area(10, 20))
 
-#200 Generate a random uuid
+#132 Generate a random uuid
 import random, string
 def random_uuid():
     random_hex = lambda length:''.join(random.choice(string.hexdigits) for _ in range(length))
     return f"{random_hex(8)}-{random_hex(4)}-4{random_hex(3)}-{random_hex(4)}-{random_hex(12)}".lower()
 print(random_uuid())
 
-#202 Calculate the area of a parallelogram
+#133 Calculate the area of a parallelogram
 def parallelogram_area(base_length, height):
     return base_length * height
 print(parallelogram_area(5, 10))
 
-#204 Convert rgb to hsl(hue, saturation, lightness)
+#134 Convert rgb to hsl(hue, saturation, lightness)
 import colorsys
 def rgb_to_hsl(rgb):
     r, g, b = rgb
@@ -894,26 +894,26 @@ rgb_value = (255, 0, 0) #Red color
 hsl_value = rgb_to_hsl(rgb_value)
 print(hsl_value)
 
-#206 Neutralize strings interaction
+#135 Neutralize strings interaction
 def neutralise(s1, s2):
     return ''.join(c1 if c1 == c2 else '0' for c1, c2 in zip(s1, s2))
 s1 = "++-+"
 s2 = "+-++"
 print(neutralise(s1, s2))
 
-#207 Convert yen to usd
+#136 Convert yen to usd
 def yen_to_usd(yen):
     return round(yen / 107.5, 2)
 print(yen_to_usd(1000))
 
-#208 Calculate war of number
+#137 Calculate war of number
 def war_of_numbers(arr):
     even_sum = sum(x for x in arr if x % 2 == 0)
     odd_sum = sum(x for x in arr if x % 2 != 0)
     return abs(even_sum - odd_sum)
 print(war_of_numbers([1,2,3,4,5,5,6]))
 
-#209 Calculate iterated square root
+#138 Calculate iterated square root
 import math
 def isqrt(n):
     if n < 0:
@@ -924,7 +924,7 @@ print(isqrt(16))
 print(isqrt(25))
 print(isqrt(-25))
 
-#210 Determine rock, paper, scissors winner
+#139 Determine rock, paper, scissors winner
 def rps(p1, p2):
     if p1 == p2:
         return "It`s a draw"
@@ -936,14 +936,14 @@ print(rps("Rock", "Paper"))
 print(rps("Scissors", "Paper"))
 print(rps("Rock", "Rock"))
 
-#211 Replace sausages with "wurst"
+#140 Replace sausages with "wurst"
 import re
 def wurst_is_better(text):
     return re.sub(r'kielbasa|chorizo|moronga|salami|sausage|andiuille|naem|merguez|gurka|snorkers|pepperoni', 'Wurst', 'text', flags=re.IGNORECASE)
 input_text = "I love kielbasa, chorizo, and pepperoni pizza."
 print(wurst_is_better(input_text))
 
-#212 Update ages after years
+#141 Update ages after years
 def after_n_years(people, years):
     return {name: age + abs(years) for name, age in people.items()}
 ages = {
@@ -955,14 +955,14 @@ updated_ages = after_n_years(ages, 5)
 for name, age in updated_ages.items():
     print(f"{name}: {age}")
 
-#213 Detect syncopation in music
+#142 Detect syncopation in music
 def has_syncopation(s):
     return any(c == '#' for idx, c in enumerate(s) if idx % 2 == 1)
 print(has_syncopation("#,#,#"))
 print(has_syncopation("###"))
 print(has_syncopation("##,#,#"))
 
-#214 Extend vowels in a word
+#143 Extend vowels in a word
 import re
 def extend_vowels(word, num):
     if num < 0 or not isinstance(num, int):
@@ -971,32 +971,32 @@ def extend_vowels(word, num):
 print(extend_vowels("Hello", 2))
 print(extend_vowels("World", -1))
 
-#215 Generate a random alphanumeric string
+#144 Generate a random alphanumeric string
 import random, string
 def random_alphanumeric_string(length):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 print(random_alphanumeric_string(8))
 
-#216 Calculate the area of a regular hexagon
+#145 Calculate the area of a regular hexagon
 import math
 def regular_hexagon_area(side_length):
     return (3 * math.sqrt(3) * side_length ** 2) / 2
 print(regular_hexagon_area(5))
 
-#217 Calculate cube diagonal from volume
+#146 Calculate cube diagonal from volume
 import math
 def cube_diagonal(volume):
     return round(math.pow(volume, 1/3) * math.sqrt(3), 2)
 print(cube_diagonal(27))
 print(cube_diagonal(55))
 
-#218 Bigint decimal string formatter
+#147 Bigint decimal string formatter
 def format_bigint(big_number, decimals):
     big_number_str = str(big_number)
     return big_number_str[:len(big_number_str) - decimals] + "." + big_number_str[len(big_number_str) - decimals:]
 print(format_bigint(123456789012345678901234567890, 5))
 
-#220 Calcualte the circumference of a circle
+#148 Calcualte the circumference of a circle
 import math
 def circle_circumference(radius):
     return 2 * math.pi * radius
@@ -1007,13 +1007,13 @@ def regular_polygon_perimeter(side_length, num_sides):
     return side_length * num_sides
 print(regular_polygon_perimeter(5, 6))
 
-#226 Calculate the area of an equilateral triangle
+#149 Calculate the area of an equilateral triangle
 import math
 def equilateral_triangle_area(side_length):
     return (math.sqrt(3) * side_length ** 2) / 4
 print(equilateral_triangle_area(5))
 
-#229 Drop elements from array
+#150 Drop elements from array
 def drop(arr, val=1):
     return arr[val:]
 print(drop([1,2,3]))
@@ -1021,67 +1021,67 @@ print(drop([1,2,3], 2))
 print(drop([1,2,3], 0))
 print(drop(["banana", "orange", "watermelon", "mango"], 2))
 
-#230 Maximum total of last five elements in an array
+#151 Maximum total of last five elements in an array
 def max_total(nums):
     return sum(sorted(nums)[-5:])
 print(max_total([1,1,0,3,10,10,10,10,1]))
 print(max_total([0,0,0,0,0,0,0,0,0,100]))
 
-#231 Calculate the area of a regular pentagon
+#152 Calculate the area of a regular pentagon
 import math
 def regular_pentagon_area(side_length):
     return (1 / 4) * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * side_length ** 2
 print(regular_pentagon_area(5))
 
-#232 Calculate the volume of a pyramid
+#153 Calculate the volume of a pyramid
 def pyramid_volume(base_area, height):
     return (1 / 3) * base_area * height
 print(pyramid_volume(25, 10))
 print(pyramid_volume(44, 15))
 
-#233 Calculate the surface area of a cube
+#154 Calculate the surface area of a cube
 def cube_surface_area(side_length):
     return 6 * side_length ** 2
 print(cube_surface_area(5))
 
-#235 Calculate the area of a regular octagon
+#155 Calculate the area of a regular octagon
 def regular_octagon_area(side_length):
     return 2 * (1 + 2 ** 0.5) * side_length ** 2
 print(regular_octagon_area(5))
 print(regular_octagon_area(10))
 
-#237 Calculate the volume of an ellipsoid
+#156 Calculate the volume of an ellipsoid
 import math
 def ellipsoid_volume(a, b, c):
     return (4/3) * math.pi * a * b * c
 print(ellipsoid_volume(5, 3, 2))
 print(ellipsoid_volume(44, 55, 66))
 
-#242 Reverse a string
+#157 Reverse a string
 def reverse_string_recursive(s):
     return s if len(s) <= 1 else reverse_string_recursive(s[1:]) + s[0]
 print(reverse_string_recursive("Hello"))
 print(reverse_string_recursive("What`s app"))
 
-#243 Count the occurrences of each element in an array
+#158 Count the occurrences of each element in an array
 from collections import Counter
 def count_occurrences(arr):
     return dict(Counter(arr))
 print(count_occurrences([1,2,3,4,5,63,2,1,2,3]))
 
-#246 Flatten an array of nested arrays
+#159 Flatten an array of nested arrays
 def flatten_array(arr):
     return [item for sublist in arr for item in sublist]
 nested_arrays = [[1, 2],[3, 4], [5, 6]]
 print(",".join(map(str, flatten_array(nested_arrays))))
 
-#248 Sum the squares of numbers in an array
+#160 Sum the squares of numbers in an array
 def sum_squares(arr):
      return sum(num * num for num in arr)
 numbers = [1, 2, 3, 4, 5]
 print(sum_squares(numbers))  
 
-#250 Move zeros to the end
+#161 Move zeros to the end
 def move_zeros(arr):
     non_zero_elements = [x for x in arr if x != 0]
     zero_count = arr.count(0)
@@ -1089,7 +1089,7 @@ def move_zeros(arr):
 result = move_zeros([1,2,3,4,5,0,9,0,65,74,0])
 print(','.join(map(str, result)))
 
-#252 Chatroom status
+#162 Chatroom status
 def chatroom_status(users):
     return "no one online" if not users else f"{users[0]} online" if len(users) == 1 else f"{users[0]} and {users[1]} online" if len(users) == 2 else f"{users[0]}, {users[1]} and {len(users) - 2} more online"
 print(chatroom_status([]))
@@ -1097,118 +1097,118 @@ print(chatroom_status(["becky647"]))
 print(chatroom_status(["becky647", "malcolm999"]))
 print(chatroom_status(["becky647", "malcolm999", "Anno3009", "AssHere", "What_df", "Anonimus"]))
 
-#254 Calculate the area of a kite
+#163 Calculate the area of a kite
 def area_of_kite(d1, d2):
     return 0.5 * d1 * d2
 print(f"Area of the kite: {area_of_kite(10, 6)}")
 
-#255 Calculate the area of a sector
+#164 Calculate the area of a sector
 import math
 def sector_area(radius, angle):
     return math.pi * radius ** 2 * angle / 360
 print(f"Area of the sector: {sector_area(5, 50)}")
 
-#5 Check if date is valid
+#165 Check if date is valid
 from datetime import datetime
 def is_date_valid(val):
     return datetime.strptime(val, "%B %d, %Y %H:%M:%S") if val else False
 print(is_date_valid("December 17, 1995 03:24:00"))                      #TODO: 1995-12-17 03:24:00
 
-#13 Check if a number is even or odd
+#166 Check if a number is even or odd
 def is_even(num):
     return num % 2 == 0
 print(is_even(3))
 
-#17 Check if array is empty
+#167 Check if array is empty
 def is_not_empty(arr):
     return isinstance(arr, list) and len(arr) > 0
 print(is_not_empty([1, 2, 3]))
 
-#25 Check if an array is special
+#168 Check if an array is special
 def is_special_array(arr):
     return all(arr[i] % 2 == i % 2 for i in range(len(arr)))
 arr = [2, 3, 5, 8, 9]
 print(is_special_array(arr))
 
-#30 Check if all elements in an array are the same
+#169 Check if all elements in an array are the same
 def test_jackpot(result):
     return len(set(result)) == 1
 result = "22211"
 print(test_jackpot(result))
 
-#43 Check if a string is empty
+#170 Check if a string is empty
 def empty_string(string):
     return not string.strip()
 print(empty_string(" "))
 
-#46 Check if a number is a multiple of 5
+#171 Check if a number is a multiple of 5
 def is_multiple_of_5(num):
     return num % 5 == 0
 print((is_multiple_of_5(10)))
 
-#49 Check if a string starts with a specific character
+#172 Check if a string starts with a specific character
 def starts_with_char(string, char):
     return string.lower().startswith(char.lower())
 print(starts_with_char("Hello, world!", "H"))
 print(starts_with_char("Hello, world!", "h"))
 
-#51 Check if an array contains a specific value
+#173 Check if an array contains a specific value
 def contains_value(arr, value):
     return value in arr
 print(contains_value([1,2,3,4,5], 3))
 
-#53 Check if a year is a leap year
+#174 Check if a year is a leap year
 def is_leap_year(year):
     return (year % 4 == 0 and year % 100 != 0) or year % 400 == 0
 print(is_leap_year(2024))
 
-#56 Check if an array is sorted in ascending order
+#175 Check if an array is sorted in ascending order
 def is_sorted_ascending(arr):
     return all(arr[i] <= arr[i + 1] for i in range(len(arr) -1))
 print(is_sorted_ascending([1,2,3,4,7,9]))
 print(is_sorted_ascending([1,2,34,5,6,78,98]))
 
-#61 Check if a string is a valid email address
+#176 Check if a string is a valid email address
 import re
 def isValiidEmail(email):
     return bool(re.match(r'^[^\5@] + @[^\5@] + \.[^\s@] + $', email))
 print(isValiidEmail('user@example.com'))
 print(isValiidEmail('garfielfinucky@gmail.com'))
 
-#65 Check if an array contains only unique values
+#177 Check if an array contains only unique values
 def HasUniqueValues(arr):
     return len(set(arr)) == len(arr)
 print(HasUniqueValues([1,2,34,5,6,7,78,2]))
 
-#67 Check if a number is a power of two
+#178 Check if a number is a power of two
 def IsPowerOfTwo(num):
     return num & (num - 1) == 0
 print(IsPowerOfTwo(16))
 
-#73 Check if a numbers is a perfect square
+#179 Check if a numbers is a perfect square
 def IsPerfectSquare(num):
     sqrt = num ** 0.5
     return sqrt.is_integer()
 print(IsPerfectSquare(16))
 
-#74 Check if a string contains only numbers
+#180 Check if a string contains only numbers
 import re
 def ContainsOnlyNumbers(s):
     return bool(re.match(r'^\d+$', s))
 print(ContainsOnlyNumbers("12345"))
 
-#77 Check if a number is a prime number
+#181 Check if a number is a prime number
 def IsPrime(num):
     return num > 1 and all(num % i != 0 for i in range(2, int(num ** 0.5) + 1))
 print(IsPrime(13))
 
-#83 Check if an object is empty
+#182 Check if an object is empty
 def IsEmptyObject(obj):
     return len(obj) == 0
 print(IsEmptyObject({}))
 print(IsEmptyObject({"name": "John", "age": 30}))
 
-#87 Check if a number is a fibonacci number
+#183 Check if a number is a fibonacci number
 def IsFibonacci(num):
     return IsPerfectSquare(5 * num * num + 4) or IsPerfectSquare(5 * num * num - 4)
 
@@ -1219,44 +1219,44 @@ print(IsFibonacci(21))
 print(IsFibonacci(6))
 print(IsFibonacci(5))
 
-#90 Check if a number is odd
+#184 Check if a number is odd
 def is_odd(num):
     return num % 2 != 0 
 print(is_odd(3))
 print(is_odd(4))
 
-#92 Check if a string ends with a specific substring
+#185 Check if a string ends with a specific substring
 def ends_with_substring(s, substring):
     return s.endswith(substring)
 print(ends_with_substring("Hello, World!", "World!"))
 print(ends_with_substring("Hello, World!", "Hello!"))
 
-#104 Check for repdigit
+#186 Check for repdigit
 def is_repdigit(num):
     return len(set(str(num))) == 1
 print(is_repdigit(1111))
 print(is_repdigit(1234))
 
-#106 Check if an array is sorted in descending order
+#187 Check if an array is sorted in descending order
 def sorted_descending(arr):
     return all(arr[i] >= arr[i + 1] for i in range(len(arr) - 1))
 print(sorted_descending([5, 4, 3, 2, 1]))
 print(sorted_descending([5, 4, 3, 2, 2, 1]))
 print(sorted_descending([1, 2, 3, 4, 5]))
 
-#109 Check if an array is a subset of another array
+#188 Check if an array is a subset of another array
 def is_subset(arr1, arr2):
     return all(item in arr2 for item in arr1)
 print(is_subset([1, 2], [1, 2, 3, 4, 5]))
 print(is_subset([1, 6], [1, 2, 3, 4, 5]))
 
-#126 Check if a string is an anagram of another string
+#189 Check if a string is an anagram of another string
 def is_anagram(str1, str2):
     return sorted(str1) == sorted(str2)
 print(is_anagram("listen", "silent"))
 print(is_anagram("hello", "world"))
 
-#128 Check if a number is a neon number
+#190 Check if a number is a neon number
 def is_neon_number(num):
     sum_of_digits = 0
     square = num * num
@@ -1266,7 +1266,7 @@ def is_neon_number(num):
     return sum_of_digits == num
 print(is_neon_number(9))
 
-#130 Check if a number is a disarium number
+#191 Check if a number is a disarium number
 def is_disarium_number(num):
     num_str = str(num)
     disarium_sum = sum(int(digit) ** (index + 1) for index, digit in enumerate(num_str))
@@ -1274,54 +1274,54 @@ def is_disarium_number(num):
 print(is_disarium_number(135))
 print(is_disarium_number(123))
 
-#133 Check if a number is a pronic number
+#192 Check if a number is a pronic number
 def is_pronic_number(num):
     n = int(num ** 0.5)
     return n * (n + 1) == num
 print(is_pronic_number(6))
 print(is_pronic_number(10))
 
-#134 Check if a string is a pangram
+#193 Check if a string is a pangram
 def is_pangram(s):
     letters = set(c.lower() for c in s if c.isalpha())
     return len(letters) == 26
 print(is_pangram("The quick brown fox jumps over the lazy dog"))
 print(is_pangram("Hello, World!"))
 
-#140 Check if a number is a prime factor of another number
+#194 Check if a number is a prime factor of another number
 def is_prime_factor(num, factor):
     return num % factor == 0 and all(factor % i != 0 for i in range(2, int(factor ** 0.5) + 1)) and factor > 1
 num = 28
 factor = 7
 print(is_prime_factor(num, factor))
 
-#142 Check if a number is a pronic square
+#195 Check if a number is a pronic square
 def is_pronic_square(num):
     sqrt = num ** 0.5
     return sqrt  == int(sqrt)
 print(is_pronic_square(36))
 print(is_pronic_square(20))
 
-#147 Check if a number is a happy number
+#196 Check if a number is a happy number
 def is_happy_number(num):
     return num == 1 or num == 7 or num == 10 or (num < 100 and num % 10 == 0 and num % 11 == 0) or (num < 1000 and num % 100 == 0 and num % 111 == 0)
 print("true" if is_happy_number(19) else "false")
 
-#161 Check if a string is a valid phone number 
+#197 Check if a string is a valid phone number 
 import re 
 def is_valid_phone_number(phone):
     return bool(re.match(r'^\(\d{3}\) \d{3}-\d{4}$', phone))
 print(is_valid_phone_number("(123) 456-7890"))
 print(is_valid_phone_number("123-456-7890"))
 
-#166 Check if a string is a valid social security number
+#198 Check if a string is a valid social security number
 import re 
 def is_valid_ssn(ssn):
     return bool(re.match(r'^\d{3}-\d{2}-\d{4}$', ssn))
 print(is_valid_ssn("123-45-6789"))
 print(is_valid_ssn("123-456-789"))
 
-#169 Check if a string is a valid ipv4 address
+#199 Check if a string is a valid ipv4 address
 import re
 def is_valid_ipv4(ip):
     pattern = r"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
@@ -1329,14 +1329,14 @@ def is_valid_ipv4(ip):
 print(is_valid_ipv4("192.168.1.1"))
 print(is_valid_ipv4("256.256.256.256"))
 
-#171 Check if a string is a valid date
+#200 Check if a string is a valid date
 import re
 def is_valid_date(date):
     return bool(re.match(r'^\d{4}-\d{2}-\d{2}$', date))
 print(is_valid_date("2023-08-23"))
 print(is_valid_date("23-08-2023"))
 
-#173 Check is a string is a valid password
+#201 Check is a string is a valid password
 import re
 def is_valid_password(password):
     pattern = r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{4,16}$'
@@ -1345,7 +1345,7 @@ print(is_valid_password("61kd*"))
 print(is_valid_password("<ss@5&+-iH_ih^>O"))
 print(is_valid_password("n65\/N.v"))
 
-#179 Check if a string is a valid credit card number
+#202 Check if a string is a valid credit card number
 import re
 def is_valid_credit_card(card_number):
     regex = re.compile(r'^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12}|(?:2131|1800|35\d{3})\d{11})$')
@@ -1353,7 +1353,7 @@ def is_valid_credit_card(card_number):
 print(is_valid_credit_card("4539 1488 0343 6467"))
 print(is_valid_credit_card("6011-0009-9013-9424"))
 
-#181 Check if a number is a vampire number
+#203 Check if a number is a vampire number
 def is_vampire_number(num):
     num_str = str(num)
     num_len = len(num_str)
@@ -1367,14 +1367,14 @@ def is_vampire_number(num):
 print(is_vampire_number(1260))
 print(is_vampire_number(1234))
 
-#183 Check if a number is a duck number
+#204 Check if a number is a duck number
 def is_duck_number(num):
     num_str = str(num)
     return '0' in num_str and num_str[0] != '0'
 print(is_duck_number(1023))
 print(is_duck_number(5345435))
 
-#186 Check if a number is a kaprekar number
+#205 Check if a number is a kaprekar number
 def is_kaprekar_number(num):
     square = num ** 2
     square_str = str(square)
@@ -1385,7 +1385,7 @@ def is_kaprekar_number(num):
 print(is_kaprekar_number(9))
 print(is_kaprekar_number(34))
 
-#188 Check if a string is a valid us phone number(US)
+#206 Check if a string is a valid us phone number(US)
 import re
 def is_valid_us_phone_number(phone):
     pattern = r"^(?:(?:\+1\s?)?(?:\(\d{3}\)?[\s.-]?)?\d{3}[\s.-]?\d{4})$"
@@ -1393,7 +1393,7 @@ def is_valid_us_phone_number(phone):
 print(is_valid_us_phone_number("+1 (123) 456-7890"))
 print(is_valid_us_phone_number("123-456-7890"))
 
-#199 Check if a number is a leyland number
+#207 Check if a number is a leyland number
 def is_leyland_number(num):
     for x in range(2, int(num ** (1/3)) + 1):
         for y in range(x + 1, num // x + 1):
@@ -1403,7 +1403,7 @@ def is_leyland_number(num):
 print(is_leyland_number(17))
 print(is_leyland_number(30))
 
-#201 Check if a string is a valid ipv6 address
+#208 Check if a string is a valid ipv6 address
 import re
 def is_valid_ipv6(ip):
     pattern = r"^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$"
@@ -1411,7 +1411,7 @@ def is_valid_ipv6(ip):
 print(is_valid_ipv6("2001:0db8:85a3:0000:0000:8a2e:0370:7334"))
 print(is_valid_ipv6("2001:0db8:85a3::8a2e:0370:7334"))
 
-#203 Check if a string is a valid mac address
+#209 Check if a string is a valid mac address
 import re
 def is_valid_mac_address(mac):
     pattern = r"^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"
@@ -1419,21 +1419,21 @@ def is_valid_mac_address(mac):
 print(is_valid_mac_address("00:1A:2B:3C:4D:5E"))
 print(is_valid_mac_address("00:1A:2B:3C:4D"))
 
-#205 Check if a number is a pandigital number
+#210 Check if a number is a pandigital number
 def is_pandigital_number(num):
     num_str = str(num)
     return len(set(num_str)) == len(num_str) and '0' not in num_str and max(num_str) == str(len(num_str))
 print(is_pandigital_number(123456789))
 print(is_pandigital_number(987654321))
 
-#219 Check if a number is a reversible number
+#211 Check if a number is a reversible number
 def is_reversible_number(num):
     return num + int(str(num)[::-1]) == sum(int(digit) for digit in str(num))
 print(is_reversible_number(36))
 print(is_reversible_number(45))
 print(is_reversible_number(10))
 
-#224 Check if a number is a unitary perfect number
+#212 Check if a number is a unitary perfect number
 def is_unitary_perfect_number(num):
     def gcd(a, b):
         return a if b == 0 else gcd(b, a % b)
@@ -1441,47 +1441,47 @@ def is_unitary_perfect_number(num):
 print(is_unitary_perfect_number(18))
 print(is_unitary_perfect_number(28))
 
-#227 Check if a number is a harshad smith number
+#213 Check if a number is a harshad smith number
 def is_harshad_smith_number(num):
     return all(num % i != 0 for i in range(2, int(num ** 0.5) + 1)) and sum(int(d) for d in str(num) == num and sum(int(d) for d in str(num)) == sum(sum(int(d) for d in str(f)) for f in ([i for i in range(2, num) if num % i == 0])))
 print(is_harshad_smith_number(22))
 print(is_harshad_smith_number(10))
 
-#228 Check if a number is a perfect power
+#214 Check if a number is a perfect power
 def is_perfect_power(num):
     return any(base ** exponent == num for base in range(2, int(num ** 0.5) + 1) for exponent in range(2, int(num ** 0.5) + 1))
 print(is_perfect_power(64))
 print(is_perfect_power(25))
 
-#236 Check if a number is a repunit number
+#215 Check if a number is a repunit number
 import re
 def is_repunit_number(num):
     return bool(re.match("^1+$", str(num)))
 print(is_repunit_number(111))
 print(is_repunit_number(11))
 
-#238 Check if a string is a valid url
+#216 Check if a string is a valid url
 import re
 def is_valid_url_alt(url):
     return bool(re.match(r"^(ftp|https):W[^ ]+$", url))
 print(is_valid_url_alt("https://www.example.com"))
 print(is_valid_url_alt("invalid url"))
 
-#239 Check if a string is a valid tax identification number(TIN)
+#217 Check if a string is a valid tax identification number(TIN)
 import re
 def is_valid_tin(tin):
     return bool(re.match(r"^[A-Z]{2}\d{6}[A-Z\d]{2}$", tin))
 print(is_valid_tin("AB123456CD"))
 print(is_valid_tin("ABC123523dfr"))
 
-#240 Check if a string is a valid ISBN
+#218 Check if a string is a valid ISBN
 import re
 def is_valid_isbn(isbn):
     return bool(re.match(r"^(?:\d{9}[\dX]|(?:\d{3}-){2}\d{1}[\dX])$", isbn))
 print(is_valid_isbn("123456789"))
 print(is_valid_isbn("09s834f3478d87z"))
 
-#241 Check if a string is a valid ip address
+#219 Check if a string is a valid ip address
 import socket
 def is_valid_ip_address(ip):
     try:
@@ -1492,26 +1492,26 @@ def is_valid_ip_address(ip):
 print(is_valid_ip_address("192.168.1.1"))
 print(is_valid_ip_address("234.230.0.0"))
 
-#244 Check if two arrays are equal
+#220 Check if two arrays are equal
 def arrays_are_equal(arr1, arr2):
     return arr1 == arr2
 print(arrays_are_equal([1,2,3], [1, 2, 3]))
 print(arrays_are_equal([1,2,3], [3,2,1]))
 
-#249 Check if a string is a palindrome
+#221 Check if a string is a palindrome
 import re
 def is_palindrome_ignoring_non_alphanumeric(s):
     cleaned_str = re.sub(r'[^a-z0-9]', '', s.lower())
     return cleaned_str == cleaned_str[::-1]
 print(is_palindrome_ignoring_non_alphanumeric("A man, a plan, a canal, Panama!"))
 
-#6 Find the days of year
+#222 Find the days of year
 from datetime import datetime
 def day_of_year(date):
     return date.timetuple().tm_yday
 print(day_of_year(datetime(2024, 10, 6)))                        #TODO: 280
 
-#8 Find the number of days between two days
+#223 Find the number of days between two days
 from datetime import datetime
 def day_diff(day1, day2):
     return abs((date2 - day1).days) + 1
@@ -1519,12 +1519,12 @@ date1 = datetime(2020, 10, 21)
 date2 = datetime(2021, 10, 22)
 print(day_diff(date1, date2))                                                    #TODO: 365
 
-#9 Find the frecuecy of character in a string
+#224 Find the frecuecy of character in a string
 def character_frequency(string):
     return {char: string.count(char) for char in set(string)}
 print(",".join([f"{k}=>{v}" for k, v in character_frequency("hello").items()]))    #TODO: h=>1,l=>2,e=>1,o=>1
 
-#12 Find the odd occurrence
+#225 Find the odd occurrence
 import random, functools
 def find_odd(ar):
     return functools.reduce(lambda x, y: x ^ y, ar)
@@ -1532,12 +1532,12 @@ ar = [random.randint(1, 100) for _ in range(random.randint(10, 20))]
 print("Input:", " ".join(map(str, ar)))
 print("Result:", find_odd(ar))
 
-#34 Find the macimum value in an array
+#226 Find the macimum value in an array
 def find_max(arr):
     return max(arr)
 print(find_max([11, 5, 56, 53, 4]))
 
-#48 Find the max value in an array of objects
+#227 Find the max value in an array of objects
 def find_max_value(arr, key):
     return max(item[key] for item in arr)
 arr = [
@@ -1550,7 +1550,7 @@ arr = [
 ]
 print(find_max_value(arr, "score"))
 
-#54 Find the index of an element in an array
+#228 Find the index of an element in an array
 def find_index(arr, element):
     try:
         return arr.index(element)
@@ -1560,7 +1560,7 @@ def find_index(arr, element):
 fruits = ['Apple', 'banana', 'orange', 'grape']
 print(find_index(fruits, 'orange'))
 
-#60 Find the difference between two dates in days
+#229 Find the difference between two dates in days
 from datetime import datetime
 def DateDifferenceInDays(date1, date2):
     return (date2 - date1).days
@@ -1568,21 +1568,21 @@ startDate = datetime(2023, 8, 1)
 endDate = datetime(2023, 8, 10)
 print(DateDifferenceInDays(startDate, endDate))
 
-#71 Find the bomb
+#230 Find the bomb
 import re
 def Bomb(s):
     return "Duck!!!" if re.search(r'\bbomb\b', s, re.IGNORECASE) else "There in no bomb, relax."
 s = "The bomb is about to explode"
 print(Bomb(s))
 
-#81 Find the intersection of two arrays
+#231 Find the intersection of two arrays
 def FindIntersection(arr1, arr2):
     return list(set(arr1) & set(arr2))
 arr1 = [1, 2, 3, 4, 5]
 arr2 = [4, 5, 6, 7, 8]
 print(FindIntersection(arr1, arr2))
 
-#86 Find the difference between two arrays
+#232 Find the difference between two arrays
 def ArrayDifference(arr1, arr2):
     return list(set(arr1) - set(arr2))
 arr1 = [1, 2, 3, 4, 5]
@@ -1591,14 +1591,14 @@ print(ArrayDifference(arr1, arr2))
 difference = ArrayDifference(arr1, arr2)
 print(",".join(map(str, difference)))
 
-#99 Find nemo
+#233 Find nemo
 def find_nemo(sentence):
     words = sentence.split()
     index = words.index("Nemo") +1 if "Nemo" in words else -1
     return f"I found Nemo at {index}!" if index != -1 else "I can't find Nemo :("
 print(find_nemo("I am finding Nemo !"))
 
-#103 Find the mode of an array of numbers
+#234 Find the mode of an array of numbers
 def mode(arr):
     occurrences = {}
     for num in arr:
@@ -1611,7 +1611,7 @@ def mode(arr):
 numbers = [1, 2, 2, 3, 3, 3, 4]
 print(f"Mode: {mode(numbers)}")
 
-#110 Find the minimum and maximum elements in an array
+#235 Find the minimum and maximum elements in an array
 def min_max(arr):
     return min(arr), max(arr) if arr else (None, None)
 result = min_max([1, 2, 3, 4, 5])
@@ -1619,14 +1619,14 @@ print(f'{{min: {result[0]}, max: {result[1]}}}')
 print(min_max([1, 2, 3, 4, 5]))
 print(min_max([43, 34, 54, 6, 23]))
 
-#107 Find the average of even number in an array
+#236 Find the average of even number in an array
 def average_of_even_numbers(arr):
     even_numbers = [num for num in arr if num % 2 == 0]
     return sum(even_numbers) / len(even_numbers) if even_numbers else 0
 print(average_of_even_numbers([1, 2, 3, 4, 5]))
 print(average_of_even_numbers([1, 3, 5]))
 
-#117 Find the nth fibonacci number
+#237 Find the nth fibonacci number
 def fibonacci(n):
     if n <= 1:
         return fibonacci(n - 1) + fibonacci(n - 2)
@@ -1634,26 +1634,26 @@ n = 7
 result = fibonacci(n)
 print(f"Fibonacci({n}): {result}")
 
-#121 Find the longest common prefix in an array of string
+#238 Find the longest common prefix in an array of string
 def longest_common_prefix(strs):
     return "" if not strs else "".join(c for i, c in enumerate(strs[0]) if all(s[i] == c for s in strs))
 strs = ["apple", "apricot", "banana"]
 print(longest_common_prefix(strs))
 
-#123 Find the first non-repeating character in a string
+#239 Find the first non-repeating character in a string
 def first_non_repeating_char(s):
     return next((c for c in s if s.count(c) == 1), None)
 s = "abacasbad"
 print(first_non_repeating_char(s))
 
-#137 Find the aberage of odd numbers in an array
+#240 Find the aberage of odd numbers in an array
 def aberage_of_odd_numbers(arr):
     odd_numbers = [num for num in arr if num % 2 != 0]
     return sum(odd_numbers) / len(odd_numbers) if odd_numbers else 0
 numbers = [1, 2, 3, 4, 5]
 print(aberage_of_odd_numbers(numbers))
 
-#141 Find the second largest prime factor of a number
+#241 Find the second largest prime factor of a number
 def largest_prime_factor(num):
     if num == 1:
         return 1
@@ -1661,13 +1661,13 @@ def largest_prime_factor(num):
     return num if factor == 0 else factor
 print(largest_prime_factor(13195))
 
-#151 Find the length of the longest word in a sentence
+#242 Find the length of the longest word in a sentence
 def longest_word_length(sentence):
     return max(len(word) for word in sentence.split())
 sentence = "The quick brown fox jumps over the lazy dog"
 print(longest_word_length(sentence))
 
-#154 Find the area of a rectangle
+#243 Find the area of a rectangle
 def rectangle_area(length, width):
     return length * width
 length = 5
@@ -1675,13 +1675,13 @@ width = 10
 area = rectangle_area(length, width)
 print(f"Area of rectangle: {area}")
 
-#162 Find the sum of the first n natural numbers
+#244 Find the sum of the first n natural numbers
 def sum_of_natural_numbers(n):
     return n * (n + 1) // 2 
 print(sum_of_natural_numbers(10))
 print(sum_of_natural_numbers(100))
 
-#164 Find the factors of a number
+#245 Find the factors of a number
 def factors(num):
     result = []
     for i in range(2, num):
@@ -1691,55 +1691,55 @@ def factors(num):
 print(",".join(map(str, factors(28))))
 print(",".join(map(str, factors(15))))
 
-#174 Find the NTH fibonacci number 
+#246 Find the NTH fibonacci number 
 def fibonacci(n):
     return n - 1 if n <= 2 else fibonacci(n - 1) + fibonacci(n - 2)
 print(fibonacci(7))
 
-#221 Find the shortest word in a string
+#247 Find the shortest word in a string
 def shortest_word(string):
     return min(string.split(), key=len)
 print(shortest_word("This is a test sentence"))
 print(shortest_word("This should been longest sentence"))
 
-#222 Find the longest word length in a string
+#248 Find the longest word length in a string
 def longest_word_length(string):
     return max(string.split(), key=len)
 print(longest_word_length("This is a test sentence"))
 print(longest_word_length("This should been longest sentence"))
 
-#223 Find the sum of proper divisors of a number
+#249 Find the sum of proper divisors of a number
 def sum_of_proper_divisiors(num):
     return sum(i for i in range(1, num) if num % i == 0)
 print(sum_of_proper_divisiors(28))
 print(sum_of_proper_divisiors(12))
 
-#234 Find the second largest number in an array
+#250 Find the second largest number in an array
 def second_largest(arr):
     sorted_arr = sorted(arr, reverse=True)
     return sorted_arr[1]
 print(second_largest([1,2,3,4,5,67,88]))
 
-#245 Find the minimum value in an array
+#251 Find the minimum value in an array
 def find_min_value(arr):
     return min(arr)
 numbers = [2,7,1,9,6]
 print(find_min_value(numbers))
 
-#247 Find the average of numbers in an array
+#252 Find the average of numbers in an array
 def find_average(arr):
     return sum(arr) /  len(arr)
 numbers = [1, 2, 3, 4, 5]
 print(find_average(numbers))
 
-#251 Find the median of numbers in an array
+#253 Find the median of numbers in an array
 def find_median(arr):
     sorted_arr = sorted(arr)
     middle = len(sorted_arr) // 2
     return (sorted_arr[middle] + sorted_arr[~middle]) / 2 if len(sorted_arr) % 2 == 0 else sorted_arr[middle]
 print(find_median([1,2,3,4,5,6,7,8]))
 
-#253 Find the asciii value of a character
+#254 Find the asciii value of a character
 def get_ascii_value(c):
     return ord(c)
 print(get_ascii_value('A'))
